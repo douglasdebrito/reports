@@ -1,0 +1,36 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "0ccdfbe9b064e7510258",
+  "position": {
+    "x": 219.05236907730674,
+    "y": 672.41895261845389,
+    "z": 5000,
+    "height": 26.034912718204488,
+    "width": 942.64339152119692,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": " The LP flash cards turns red when the latest LP Steam Pressure Point has a variance <5% or >5% against the LP Steam Pressure Optimised",
+                    "textStyle": {
+                      "fontSize": "11pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

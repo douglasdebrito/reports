@@ -1,0 +1,58 @@
+relationship 2c6e10cc-78d7-9340-8cde-c9b9f90b18ac
+	fromColumn: Forecast.7_DAYS_DATE
+	toColumn: 'Date Table'.calendar_date
+
+relationship 7531e129-ce48-4919-5b3a-a08d31eff9e2
+	fromColumn: Forecast.7_DAYS_TIME
+	toColumn: 'Time Table'.Time
+
+relationship 333081de-248b-ba8b-a7d0-22b4202f3a69
+	fromColumn: 'Hindcast Model'.TS_DATE
+	toColumn: 'Date Table'.calendar_date
+
+relationship 1698af38-2220-bde5-f2ab-919d2d10269b
+	fromColumn: 'Hindcast Model'.TS_TIME
+	toColumn: 'Time Table'.Time
+
+relationship db0cc7f7-4194-fb56-369c-458e18a809f7
+	fromColumn: 'GES Hindcast Model'.Time
+	toColumn: 'Time Table'.Time
+
+relationship 5e4ce3d0-f10f-986f-341a-cad75d357995
+	fromColumn: 'GES Hindcast Model'.Date
+	toColumn: 'Date Table'.calendar_date
+
+relationship e5ab7bac-3583-c601-7f59-78dcb17fbcb9
+	fromColumn: 'DQ Transformation'.Date
+	toColumn: 'Date Table'.calendar_date
+
+relationship a6c07bb7-7536-b9f4-930e-e69cab409e6d
+	fromColumn: 'DQ Transformation'.Time
+	toColumn: 'Time Table'.'Time Text'
+
+relationship 31db2670-6874-441c-fe4a-2ec11308d003
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Date Periods'.Date
+	toColumn: 'Date Table'.calendar_date
+
+relationship c1da3b6e-5150-c4e0-7ff7-6ef84c9f8385
+	fromColumn: 'DQ Set Point Optimiser'.ts_date
+	toColumn: 'Date Table'.calendar_date
+
+relationship 08772d65-7d14-fe31-8208-bc6c1deae962
+	fromColumn: 'Flow Calibration Alerts'.ts_time
+	toColumn: 'Time Table'.Time
+
+relationship 77a6e7d6-2acd-7d6d-bb9f-16a86374cf72
+	fromColumn: 'Flow Calibration Alerts'.ts_date
+	toColumn: 'Date Table'.calendar_date
+
+relationship db72b1d3-e56a-4f3b-bc36-7df05a5848ce
+	crossFilteringBehavior: bothDirections
+	fromColumn: EventDateBridge.EventID
+	toColumn: Events.event_id
+
+relationship 539a8055-9ad6-0a8e-28f2-3503f2388303
+	fromColumn: EventDateBridge.Date
+	toColumn: 'Date Table'.calendar_date
+

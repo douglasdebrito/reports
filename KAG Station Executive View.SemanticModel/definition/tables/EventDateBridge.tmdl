@@ -1,0 +1,48 @@
+table EventDateBridge
+	lineageTag: 6b4fa7af-2490-4f95-b4c0-d5f7780b2ff9
+
+	column EventID
+		formatString: 0
+		lineageTag: 014fdc3c-cb49-4c63-9fc5-6bb8214d64d0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [EventID]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		formatString: Long Date
+		lineageTag: 6b74f3eb-7e18-4351-a663-d5704fe2b179
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition EventDateBridge = calculated
+		mode: import
+		source = ```
+				
+				    SELECTCOLUMNS(
+				            GENERATE(
+				                Events,       
+				                VAR StartDate = Events[event_start_date]
+				                VAR EndDate =  IF(ISBLANK(Events[event_end_date]),NOW(),Events[event_end_date])
+				                VAR EventID  =  Events[event_id]      
+				                
+				            RETURN
+				            ADDCOLUMNS(
+				                CALENDAR(StartDate,EndDate),
+				                "EventID", Events[event_id]                      
+				                    )
+				            ),
+				            "EventID", [event_id],
+				            "Date", [Date]
+				
+				    )            
+				```
+
+	annotation PBI_Id = b597659f17524532aa420a17c21d307a
+

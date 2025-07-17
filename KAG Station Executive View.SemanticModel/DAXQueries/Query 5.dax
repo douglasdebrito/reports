@@ -1,0 +1,12 @@
+DEFINE MEASURE '_Measures_Folder'[DQ SP OP LP Steam Flow Optimised] = AVERAGE('DQ 30 Min Bin Last 12h'[lp_steam_flow_optimised])
+
+MEASURE '_Measures_Folder'[DQ SP OP 30 Min Exhaust Flow Optimised] = AVERAGE('DQ 30 Min Bin Last 12h'[exhaust_flow_optimised])
+
+MEASURE '_Measures_Folder'[DQ SP OP 30 Min LP Steam Pressure Actual] = AVERAGE('DQ 30 Min Bin Last 12h'[LP_STEAM_PRESSURE_ACTUAL])
+
+MEASURE '_Measures_Folder'[DQ SP OP 30 Min LP Steam Pressure Set Point] = AVERAGE('DQ 30 Min Bin Last 12h'[LP_STEAM_PRESSURE_SET_POINT])
+
+MEASURE '_Measures_Folder'[DQ SP OP 30 Min LP Steam Pressure Optimised] = AVERAGE('DQ 30 Min Bin Last 12h'[lp_steam_pressure_optimised])
+
+MEASURE '_Measures_Folder'[DQ SP OP 30 Min Net Output Optimised] = AVERAGE('DQ 30 Min Bin Last 12h'[net_output_optimised])
+

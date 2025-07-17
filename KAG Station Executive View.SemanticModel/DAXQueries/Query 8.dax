@@ -1,0 +1,51 @@
+DEFINE
+	VAR __DS0FilterTable = 
+		FILTER(
+			KEEPFILTERS(VALUES('DQ 30 Min Bin Last 12h'[ROW_NUM])),
+			'DQ 30 Min Bin Last 12h'[ROW_NUM] < 12
+		)
+
+	VAR __ValueFilterDM0 = 
+		FILTER(
+			KEEPFILTERS(
+				SUMMARIZECOLUMNS(
+					'DQ 30 Min Bin Last 12h'[Date],
+					'DQ 30 Min Bin Last 12h'[Hour],
+					__DS0FilterTable,
+					"DQ_SP_Check_Gross_Variance", '_Measures_Folder'[DQ SP Check Gross Variance]
+				)
+			),
+			OR(
+				[DQ_SP_Check_Gross_Variance] <> "",
+				ISBLANK([DQ_SP_Check_Gross_Variance]) <> ISBLANK("")
+			)
+		)
+
+	VAR __DS0Core = 
+		SUMMARIZECOLUMNS(
+			'DQ 30 Min Bin Last 12h'[Date],
+			'DQ 30 Min Bin Last 12h'[Hour],
+			__DS0FilterTable,
+			__ValueFilterDM0,
+			"DQ_SP_Check_Gross_Variance", '_Measures_Folder'[DQ SP Check Gross Variance]
+		)
+
+	VAR __DS0PrimaryWindowed = 
+		TOPN(
+			501,
+			__DS0Core,
+			[DQ_SP_Check_Gross_Variance],
+			1,
+			'DQ 30 Min Bin Last 12h'[Date],
+			1,
+			'DQ 30 Min Bin Last 12h'[Hour],
+			1
+		)
+
+EVALUATE
+	__DS0PrimaryWindowed
+
+ORDER BY
+	[DQ_SP_Check_Gross_Variance],
+	'DQ 30 Min Bin Last 12h'[Date],
+	'DQ 30 Min Bin Last 12h'[Hour]

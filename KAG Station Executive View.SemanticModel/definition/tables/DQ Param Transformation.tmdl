@@ -1,0 +1,108 @@
+table 'DQ Param Transformation'
+	lineageTag: 76f9f0c0-d5a1-4b5e-ba65-6d53a1bbc076
+
+	column 'DQ Param Transformation'
+		lineageTag: cad64630-ddea-4618-9431-012e4261fc16
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'DQ Param Transformation Order'
+
+		relatedColumnDetails
+			groupByColumn: 'DQ Param Transformation Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DQ Param Transformation Fields'
+		isHidden
+		lineageTag: f351f5d7-67b0-44ce-ba78-cbeca10d13f4
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'DQ Param Transformation Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DQ Param Transformation Order'
+		isHidden
+		formatString: 0
+		lineageTag: 6c766379-bc50-40ec-90d5-118423752356
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'DQ Param Transformation' = calculated
+		mode: import
+		source =
+				{
+				    ("1ST_BRIP_A_MOTOR_SPEED", NAMEOF('_Measures_Folder'[DQ_1ST_BRIP_A_MOTOR_SPEED]), 0),
+				    ("1ST_BRIP_B_MOTOR_SPEED", NAMEOF('_Measures_Folder'[DQ_1ST_BRIP_B_MOTOR_SPEED]), 1),
+				    ("2ND_BRIP_A_CURRENT", NAMEOF('_Measures_Folder'[DQ_2ND_BRIP_A_CURRENT]), 2),
+				    ("2ND_BRIP_B_CURRENT", NAMEOF('_Measures_Folder'[DQ_2ND_BRIP_B_CURRENT]), 3),
+				    ("AMBIENT_TEMP", NAMEOF('_Measures_Folder'[DQ_AMBIENT_TEMP]), 4),
+				    ("BRINE_FLOW_TO_REINJECTION", NAMEOF('_Measures_Folder'[DQ_BRINE_FLOW_TO_REINJECTION]), 5),
+				    ("BRINE_FLOW_TO_REINJECTION_PRESSURE", NAMEOF('_Measures_Folder'[DQ_BRINE_FLOW_TO_REINJECTION_PRESSURE]), 6),
+				    ("CONDENSER_HOTWELL_TEMPERATURE", NAMEOF('_Measures_Folder'[DQ_CONDENSER_HOTWELL_TEMPERATURE]), 7),
+				    ("CONDENSOR_PRESSURE_A", NAMEOF('_Measures_Folder'[DQ_CONDENSOR_PRESSURE_A]), 8),
+				    ("CONDENSOR_PRESSURE_B", NAMEOF('_Measures_Folder'[DQ_CONDENSOR_PRESSURE_B]), 9),
+				    ("CONDENSOR_PRESSURE_C", NAMEOF('_Measures_Folder'[DQ_CONDENSOR_PRESSURE_C]), 10),
+				    ("CONDENSOR_PRESSURE_D", NAMEOF('_Measures_Folder'[DQ_CONDENSOR_PRESSURE_D]), 11),
+				    ("COOL_WATER_FLOW", NAMEOF('_Measures_Folder'[DQ_COOL_WATER_FLOW]), 12),
+				    ("COOLING_TOWER_FAN_A_CURRENT", NAMEOF('_Measures_Folder'[DQ_COOLING_TOWER_FAN_A_CURRENT]), 13),
+				    ("COOLING_TOWER_FAN_B_CURRENT", NAMEOF('_Measures_Folder'[DQ_COOLING_TOWER_FAN_B_CURRENT]), 14),
+				    ("COOLING_TOWER_FAN_C_CURRENT", NAMEOF('_Measures_Folder'[DQ_COOLING_TOWER_FAN_C_CURRENT]), 15),
+				    ("COOLING_TOWER_FAN_D_CURRENT", NAMEOF('_Measures_Folder'[DQ_COOLING_TOWER_FAN_D_CURRENT]), 16),
+				    ("COOLING_TOWER_FAN_E_CURRENT", NAMEOF('_Measures_Folder'[DQ_COOLING_TOWER_FAN_E_CURRENT]), 17),
+				    ("COOLING_TOWER_FAN_F_CURRENT", NAMEOF('_Measures_Folder'[DQ_COOLING_TOWER_FAN_F_CURRENT]), 18),
+				    ("COOLING_TOWER_FAN_G_CURRENT", NAMEOF('_Measures_Folder'[DQ_COOLING_TOWER_FAN_G_CURRENT]), 19),
+				    ("COOLING_TOWER_FAN_H_CURRENT", NAMEOF('_Measures_Folder'[DQ_COOLING_TOWER_FAN_H_CURRENT]), 20),
+				    ("COOLING_TOWER_FAN_I_CURRENT", NAMEOF('_Measures_Folder'[DQ_COOLING_TOWER_FAN_I_CURRENT]), 21),
+				    ("COOLING_TOWER_FAN_J_CURRENT", NAMEOF('_Measures_Folder'[DQ_COOLING_TOWER_FAN_J_CURRENT]), 22),
+				    ("Cooling_tower_fan_total_current", NAMEOF('_Measures_Folder'[DQ_Cooling_tower_fan_total_current]), 23),
+				    ("COOLING_TOWER_INLET_COND_TEMP", NAMEOF('_Measures_Folder'[DQ_COOLING_TOWER_INLET_COND_TEMP]), 24),
+				    ("GENERATOR_COOLING_AIR_TEMP_COLD_TURB", NAMEOF('_Measures_Folder'[DQ_GENERATOR_COOLING_AIR_TEMP_COLD_TURB]), 25),
+				    ("GROSS_MW_OUTPUT", NAMEOF('_Measures_Folder'[DQ_GROSS_MW_OUTPUT]), 26),
+				    ("HP_BRINE_FLOW", NAMEOF('_Measures_Folder'[DQ_HP_BRINE_FLOW]), 27),
+				    ("HP_GES_STEAM_SUPPLY", NAMEOF('_Measures_Folder'[DQ_HP_GES_STEAM_SUPPLY]), 28),
+				    ("HP_STEAM_FLOW_ALL", NAMEOF('_Measures_Folder'[DQ_HP_STEAM_FLOW_ALL]), 29),
+				    ("HP_STEAM_NCG_CONTENT", NAMEOF('_Measures_Folder'[DQ_HP_STEAM_NCG_CONTENT]), 30),
+				    ("HP_STEAM_PRESSURE", NAMEOF('_Measures_Folder'[DQ_HP_STEAM_PRESSURE]), 31),
+				    ("HUMIDITY", NAMEOF('_Measures_Folder'[DQ_HUMIDITY]), 32),
+				    ("KA41_PROD_WELL_2_PHASE_FLOW", NAMEOF('_Measures_Folder'[DQ_KA41_PROD_WELL_2_PHASE_FLOW]), 33),
+				    ("KA42_PROD_WELL_2_PHASE_FLOW", NAMEOF('_Measures_Folder'[DQ_KA42_PROD_WELL_2_PHASE_FLOW]), 34),
+				    ("KA45_PROD_WELL_2_PHASE_FLOW", NAMEOF('_Measures_Folder'[DQ_KA45_PROD_WELL_2_PHASE_FLOW]), 35),
+				    ("KA46_PROD_WELL_2_PHASE_FLOW", NAMEOF('_Measures_Folder'[DQ_KA46_PROD_WELL_2_PHASE_FLOW]), 36),
+				    ("KA52_PROD_WELL_2_PHASE_FLOW", NAMEOF('_Measures_Folder'[DQ_KA52_PROD_WELL_2_PHASE_FLOW]), 37),
+				    ("KA61_PROD_WELL_TWO_PHASE_FLOW", NAMEOF('_Measures_Folder'[DQ_KA61_PROD_WELL_TWO_PHASE_FLOW]), 38),
+				    ("KAWERAU_TOTAL_MW", NAMEOF('_Measures_Folder'[DQ_KAWERAU_TOTAL_MW]), 39),
+				    ("KGL_TO_TP_RTU_MW_NET", NAMEOF('_Measures_Folder'[DQ_KGL_TO_TP_RTU_MW_NET]), 40),
+				    ("LP_STEAM_FLOW", NAMEOF('_Measures_Folder'[DQ_LP_STEAM_FLOW]), 41),
+				    ("LP_STEAM_PRESSURE", NAMEOF('_Measures_Folder'[DQ_LP_STEAM_PRESSURE]), 42),
+				    ("LP_STEAM_PRESSURE_2", NAMEOF('_Measures_Folder'[DQ_LP_STEAM_PRESSURE_2]), 43),
+				    ("LP_STEAM_PRESSURE_SET_POINT", NAMEOF('_Measures_Folder'[DQ_LP_STEAM_PRESSURE_SET_POINT]), 44),
+				    ("MAIN_COOLING_WATER_TEMP", NAMEOF('_Measures_Folder'[DQ_MAIN_COOLING_WATER_TEMP]), 45),
+				    ("NET_POWER", NAMEOF('_Measures_Folder'[DQ_NET_POWER]), 46),
+				    ("NTGA_STEAM_FLOW_DEMAND", NAMEOF('_Measures_Folder'[DQ_NTGA_STEAM_FLOW_DEMAND]), 47),
+				    ("PARASITIC_LOAD", NAMEOF('_Measures_Folder'[DQ_PARASITIC_LOAD]), 48),
+				    ("PK06_PROD_WELL_2_PHASE_FLOW", NAMEOF('_Measures_Folder'[DQ_PK06_PROD_WELL_2_PHASE_FLOW]), 49),
+				    ("PK07_PROD_WELL_2_PHASE_FLOW", NAMEOF('_Measures_Folder'[DQ_PK07_PROD_WELL_2_PHASE_FLOW]), 50),
+				    ("STATION_ENTHALPY", NAMEOF('_Measures_Folder'[DQ_STATION_ENTHALPY]), 51),
+				    ("STG_COOLING_WATER_SUPPLY_PRESSURE", NAMEOF('_Measures_Folder'[DQ_STG_COOLING_WATER_SUPPLY_PRESSURE]), 52),
+				    ("TOTAL_BRINE_REINJECTION_FLOW", NAMEOF('_Measures_Folder'[DQ_TOTAL_BRINE_REINJECTION_FLOW]), 53),
+				    ("TOTAL_TURBINE_STEAM_FLOW", NAMEOF('_Measures_Folder'[DQ_TOTAL_TURBINE_STEAM_FLOW]), 54),
+				    ("TURBINE_HP_CHAMBER_PRESSURE", NAMEOF('_Measures_Folder'[DQ_TURBINE_HP_CHAMBER_PRESSURE]), 55),
+				    ("TURBINE_LP_CHAMBER_PRESSURE", NAMEOF('_Measures_Folder'[DQ_TURBINE_LP_CHAMBER_PRESSURE]), 56),
+				    ("VACCUM_PUMP_40_CURRENT", NAMEOF('_Measures_Folder'[DQ_VACCUM_PUMP_40_CURRENT]), 57),
+				    ("VACCUM_PUMP_60_CURRENT", NAMEOF('_Measures_Folder'[DQ_VACCUM_PUMP_60_CURRENT]), 58),
+				    ("VACCUM_PUMP_80_CURRENT", NAMEOF('_Measures_Folder'[DQ_VACCUM_PUMP_80_CURRENT]), 59),
+				    ("Wbt", NAMEOF('_Measures_Folder'[DQ_Wbt]), 60),
+				    ("Wbt_lag_1hr", NAMEOF('_Measures_Folder'[DQ_Wbt_lag_1hr]), 61)
+				}
+
+	annotation PBI_Id = 2c2b40cd4e994910b7f9b666eefa5547
+

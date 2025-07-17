@@ -1,0 +1,886 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 67661625.403595611
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 307.25215499508442,
+            "y": 70074762.57838051
+          },
+          "nodeIndex": "Date Table",
+          "nodeLineageTag": "e9c6d80c-bf18-4983-97d2-f83baf9d9953",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 19,
+          "expandedHeight": 500
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 70075109.097197711
+          },
+          "nodeIndex": "_Measures_Folder",
+          "nodeLineageTag": "f3f51354-8aa3-4ff2-a326-46c0579e67c0",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 14,
+          "expandedHeight": 104
+        },
+        {
+          "location": {
+            "x": 1028.9508593028431,
+            "y": 70074748.144120529
+          },
+          "nodeIndex": "Time Table",
+          "nodeLineageTag": "9a9313dd-3206-4e19-a627-96264eb1dd80",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 22,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 70074772.138901889
+          },
+          "nodeIndex": "Date Periods",
+          "nodeLineageTag": "6f66ead2-91ee-4f85-bd27-07137718c343",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 15,
+          "expandedHeight": 200
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 70074689.406259239
+          },
+          "nodeIndex": "Date Table Ref",
+          "nodeLineageTag": "8a199b1d-8ade-4252-8ef6-c899ee3cd626",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 13,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 2309.124359759548,
+            "y": 65152410.466581389
+          },
+          "nodeIndex": "DQ Last Refresh",
+          "nodeLineageTag": "115df741-5ca0-4d10-9e4d-b826699cc992",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 25,
+          "expandedHeight": 145
+        },
+        {
+          "location": {
+            "x": 294.7762244736773,
+            "y": 70075209.284779266
+          },
+          "nodeIndex": "Last Refresh",
+          "nodeLineageTag": "388a11e5-f61a-4803-a9bd-8a563de63355",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 12,
+          "expandedHeight": 104
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 70075314.407133684
+          },
+          "nodeIndex": "Table Period Backup",
+          "nodeLineageTag": "f5c4320f-fe47-41c2-9f31-cfe8b61c6833",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 16,
+          "expandedHeight": 152
+        },
+        {
+          "location": {
+            "x": 294.7517845273984,
+            "y": 70075111.760516942
+          },
+          "nodeIndex": "DQ 2 Min Avg Last 24h",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 20,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 70075227.7542022
+          },
+          "nodeIndex": "DQ 2 Min Bin Last 48h",
+          "size": {
+            "height": 72,
+            "width": 238.29250171641843
+          },
+          "zIndex": 10,
+          "expandedHeight": 297.94505835822565
+        },
+        {
+          "location": {
+            "x": 292.23184709359356,
+            "y": 70075303.674058482
+          },
+          "nodeIndex": "DQ GWh Yesterday Today",
+          "nodeLineageTag": "9f472f68-5db7-4944-a2ca-2581fb7b4b36",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 11,
+          "expandedHeight": 128
+        },
+        {
+          "location": {
+            "x": 690.20837707881662,
+            "y": 70074502.865530059
+          },
+          "nodeIndex": "Hindcast Model",
+          "nodeLineageTag": "83e810d6-0be7-43b5-8931-af2eb36d9fb3",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 9,
+          "expandedHeight": 248
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 70075400.91732657
+          },
+          "nodeIndex": "Param Hindcast NTGAs",
+          "nodeLineageTag": "8538d566-254e-449d-81ad-c862e73a3c8b",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 18,
+          "expandedHeight": 145
+        },
+        {
+          "location": {
+            "x": 292.48267926019258,
+            "y": 70075387.302462563
+          },
+          "nodeIndex": "DQ 2 Min Bin Last 50Min",
+          "nodeLineageTag": "b11b564e-28d9-4e20-b9fd-05bb195d6043",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 21,
+          "expandedHeight": 145
+        },
+        {
+          "location": {
+            "x": 292.14531415711366,
+            "y": 70075468.515098423
+          },
+          "nodeIndex": "DQ Set Point Optimiser",
+          "nodeLineageTag": "26ffaf08-8936-4e88-9e45-d65f0a37ad0d",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 23,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 1312.9508593028431,
+            "y": 69294157.238492921
+          },
+          "nodeIndex": "Param Hindcast NTGA MW/th",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 8,
+          "expandedHeight": 152
+        },
+        {
+          "location": {
+            "x": 681.28989494957023,
+            "y": 70074982.821956128
+          },
+          "nodeIndex": "GES Hindcast Model",
+          "nodeLineageTag": "495279e1-14b8-4194-8d9c-d756e8e1f7a6",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 24,
+          "expandedHeight": 1000
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 70075021.48122564
+          },
+          "nodeIndex": "Param Forecast",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 4,
+          "expandedHeight": 152
+        },
+        {
+          "location": {
+            "x": 3016.9508593028431,
+            "y": 66958737.4490366
+          },
+          "nodeIndex": "Flag Temp x Humidity",
+          "nodeLineageTag": "3af5e1a9-9eb4-4ab5-afa5-d69a2905840e",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 5,
+          "expandedHeight": 104
+        },
+        {
+          "location": {
+            "x": 647.02142998974659,
+            "y": 70074661.552958414
+          },
+          "nodeIndex": "Forecast",
+          "size": {
+            "height": 128,
+            "width": 294
+          },
+          "zIndex": 6,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 3584.9508593028431,
+            "y": 65538418.726691529
+          },
+          "nodeIndex": "DQ Transformation",
+          "nodeLineageTag": "c69f22ea-db7f-4d52-aecf-3f9f6aa4da82",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 7,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 2281.0217376091691,
+            "y": 65153114.810067371
+          },
+          "nodeIndex": "DQ Param Transformation",
+          "nodeLineageTag": "76f9f0c0-d5a1-4b5e-ba65-6d53a1bbc076",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 26,
+          "expandedHeight": 145
+        },
+        {
+          "location": {
+            "x": 3868.9508593028431,
+            "y": 60782315.789178364
+          },
+          "nodeIndex": "PI TAGs",
+          "nodeLineageTag": "8158692f-90b8-4f1d-a981-2ed72a298b49",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 562.69779085924017,
+            "y": 59553580.395201221
+          },
+          "nodeIndex": "Flow Calibration Alerts",
+          "nodeLineageTag": "191bd445-7d9c-44b4-8297-3dfaf55813ae",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 27
+        },
+        {
+          "location": {
+            "x": 4152.9508593028431,
+            "y": 57227379.536493033
+          },
+          "nodeIndex": "Param 2 Phase Sel 1",
+          "nodeLineageTag": "75093c42-0367-4856-9468-fa4df0040fee",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 4436.9508593028431,
+            "y": 57227379.536493033
+          },
+          "nodeIndex": "Param 2 Phase Sel 2",
+          "nodeLineageTag": "a92623fa-f9e6-4352-acab-047ea36af293",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 291.890116716453,
+            "y": 70074931.927243009
+          },
+          "nodeIndex": "DQ 30 Min Bin Last 12h",
+          "size": {
+            "height": 72,
+            "width": 244.53355615891098
+          },
+          "zIndex": 28,
+          "expandedHeight": 538.17730188337555
+        },
+        {
+          "location": {
+            "x": 4720.9508593028431,
+            "y": 51385101.088892087
+          },
+          "nodeIndex": "Top5DailyDeltas",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 5004.9508593028431,
+            "y": 47515397.923234813
+          },
+          "nodeIndex": "Table",
+          "nodeLineageTag": "29719fb1-c448-427c-843a-c289cacb304a",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 5288.9508593028431,
+            "y": 34866608.490441531
+          },
+          "nodeIndex": "Pages x Tables",
+          "nodeLineageTag": "0390b242-bc6e-4061-ab50-b2ab0b34789d",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 5572.9508593028431,
+            "y": 29226518.842475623
+          },
+          "nodeIndex": "DQ Set Point Optimiser Latest",
+          "nodeLineageTag": "a9613861-4d2e-49f8-9550-cdd272805ad3",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "Events",
+          "nodeLineageTag": "66a32be4-f0f3-4bf5-b498-c7b06ba06762",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "DQ Set Point Optimiser Process Check",
+          "nodeLineageTag": "ad1ea854-03e8-4acb-a671-c31307934c3b",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "EventDateBridge",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "Parameter",
+          "nodeLineageTag": "0a893cde-6b36-4a3b-97a4-d1498db17482",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 49.59034282705381,
+      "pinKeyFieldsToTop": true,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 1,
+      "scrollPosition": {
+        "x": 0,
+        "y": 1046.4955840954467
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 2046.4645853537897
+          },
+          "nodeIndex": "_Measures_Folder",
+          "nodeLineageTag": "f3f51354-8aa3-4ff2-a326-46c0579e67c0",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 3,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 436.09229438555286
+          },
+          "nodeIndex": "Date Periods",
+          "nodeLineageTag": "6f66ead2-91ee-4f85-bd27-07137718c343",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 21,
+          "expandedHeight": 152
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 914.43022423192747
+          },
+          "nodeIndex": "Date Table",
+          "nodeLineageTag": "e9c6d80c-bf18-4983-97d2-f83baf9d9953",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 19,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 1656.2449875587888
+          },
+          "nodeIndex": "Date Table Ref",
+          "nodeLineageTag": "8a199b1d-8ade-4252-8ef6-c899ee3cd626",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 4,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 248.26106429689509,
+            "y": 1916.0953348916853
+          },
+          "nodeIndex": "DQ 2 Min Avg Last 24h",
+          "nodeLineageTag": "7f285457-2545-4196-b6cb-5ba45e149693",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 22,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 263.59896448133918,
+            "y": 2177.2083688494549
+          },
+          "nodeIndex": "DQ 2 Min Bin Last 48h",
+          "nodeLineageTag": "ea74f57c-8767-4d6b-afda-84f41980add6",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 24,
+          "expandedHeight": 200
+        },
+        {
+          "location": {
+            "x": 265.38957633987127,
+            "y": 2262.5121209983822
+          },
+          "nodeIndex": "DQ 2 Min Bin Last 50Min",
+          "nodeLineageTag": "b11b564e-28d9-4e20-b9fd-05bb195d6043",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 5,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 253.79826937041059,
+            "y": 2001.8809873452765
+          },
+          "nodeIndex": "DQ GWh Yesterday Today",
+          "nodeLineageTag": "9f472f68-5db7-4944-a2ca-2581fb7b4b36",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 6,
+          "expandedHeight": 128
+        },
+        {
+          "location": {
+            "x": 250.36677054967055,
+            "y": 1824.5318863889263
+          },
+          "nodeIndex": "DQ Last Refresh",
+          "nodeLineageTag": "115df741-5ca0-4d10-9e4d-b826699cc992",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 7,
+          "expandedHeight": 104
+        },
+        {
+          "location": {
+            "x": 254.20860146577928,
+            "y": 1725.1033648408281
+          },
+          "nodeIndex": "DQ Param Transformation",
+          "nodeLineageTag": "76f9f0c0-d5a1-4b5e-ba65-6d53a1bbc076",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 8,
+          "expandedHeight": 152
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 1536.0468363038383
+          },
+          "nodeIndex": "DQ Set Point Optimiser",
+          "nodeLineageTag": "26ffaf08-8936-4e88-9e45-d65f0a37ad0d",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 9,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 562.44978480910208,
+            "y": 556.77099850540765
+          },
+          "nodeIndex": "DQ Transformation",
+          "nodeLineageTag": "c69f22ea-db7f-4d52-aecf-3f9f6aa4da82",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 10,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 1852.9414881908049
+          },
+          "nodeIndex": "Flag Temp x Humidity",
+          "nodeLineageTag": "3af5e1a9-9eb4-4ab5-afa5-d69a2905840e",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 11,
+          "expandedHeight": 104
+        },
+        {
+          "location": {
+            "x": 568.62757372013994,
+            "y": 1090.933525763895
+          },
+          "nodeIndex": "Forecast",
+          "nodeLineageTag": "bf918f65-9dcf-4e5f-9046-3468aae119eb",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 25,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 551.21064503918365,
+            "y": 1247.8042277021295
+          },
+          "nodeIndex": "GES Hindcast Model",
+          "nodeLineageTag": "495279e1-14b8-4194-8d9c-d756e8e1f7a6",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 12,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 558.67418832163764,
+            "y": 739.21151556320751
+          },
+          "nodeIndex": "Hindcast Model",
+          "nodeLineageTag": "83e810d6-0be7-43b5-8931-af2eb36d9fb3",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 20,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 2346.4239913508845
+          },
+          "nodeIndex": "Last Refresh",
+          "nodeLineageTag": "388a11e5-f61a-4803-a9bd-8a563de63355",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 13,
+          "expandedHeight": 104
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 1961.1575834900916
+          },
+          "nodeIndex": "Param Forecast",
+          "nodeLineageTag": "28e4adf1-98c5-49ca-9bbb-11ec0b7bdf39",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 14,
+          "expandedHeight": 152
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 2246.0738682204574
+          },
+          "nodeIndex": "Param Hindcast NTGA MW/th",
+          "nodeLineageTag": "5072b968-2e58-415f-9507-69dd9cd2a6ae",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 15,
+          "expandedHeight": 152
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 2145.5151694633087
+          },
+          "nodeIndex": "Param Hindcast NTGAs",
+          "nodeLineageTag": "8538d566-254e-449d-81ad-c862e73a3c8b",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 16,
+          "expandedHeight": 152
+        },
+        {
+          "location": {
+            "x": 266.74351643852975,
+            "y": 2349.4312287906823
+          },
+          "nodeIndex": "PI TAGs",
+          "nodeLineageTag": "8158692f-90b8-4f1d-a981-2ed72a298b49",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 23,
+          "expandedHeight": 224
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 1758.1779594357747
+          },
+          "nodeIndex": "Table Period Backup",
+          "nodeLineageTag": "f5c4320f-fe47-41c2-9f31-cfe8b61c6833",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 17,
+          "expandedHeight": 152
+        },
+        {
+          "location": {
+            "x": 975.71224552871934,
+            "y": 939.08391122346143
+          },
+          "nodeIndex": "Time Table",
+          "nodeLineageTag": "9a9313dd-3206-4e19-a627-96264eb1dd80",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 18,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 551.68180792337455,
+            "y": 1392.3636158467486
+          },
+          "nodeIndex": "Flow Calibration Alerts",
+          "nodeLineageTag": "191bd445-7d9c-44b4-8297-3dfaf55813ae",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 2,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 259.16668223213,
+            "y": 2085.4622130104372
+          },
+          "nodeIndex": "DQ 30 Min Bin Last 12h",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 1,
+          "expandedHeight": 145
+        },
+        {
+          "location": {
+            "x": 626.99777799084984,
+            "y": 943.08674810705133
+          },
+          "nodeIndex": "Events",
+          "nodeLineageTag": "66a32be4-f0f3-4bf5-b498-c7b06ba06762",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 26,
+          "expandedHeight": 272
+        },
+        {
+          "location": {
+            "x": 319.35579677391144,
+            "y": 860.32362032955552
+          },
+          "nodeIndex": "EventDateBridge",
+          "nodeLineageTag": "6b4fa7af-2490-4f95-b4c0-d5f7780b2ff9",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 27,
+          "expandedHeight": 319.59325718919172
+        }
+      ],
+      "name": "Layout 1",
+      "zoomValue": 75.681160249192686,
+      "pinKeyFieldsToTop": true,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 2,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [],
+      "name": "Layout 2",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": true,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Layout 1",
+  "defaultDiagram": "All tables"
+}

@@ -1,0 +1,85 @@
+table 'Table Period Backup'
+	isHidden
+	lineageTag: f5c4320f-fe47-41c2-9f31-cfe8b61c6833
+
+	column Date
+		isHidden
+		formatString: General Date
+		lineageTag: e161a8a6-d1ef-473a-a237-ab1954a32677
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		isHidden
+		lineageTag: e3f63210-a6e2-439a-b565-8faab9a4c9ad
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Type]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sort
+		isHidden
+		formatString: 0
+		lineageTag: 7b6ef987-a0ad-4912-9c61-30c5ca0335dc
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Sort]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Table Period Backup' = calculated
+		mode: import
+		source = ```
+				
+				
+				
+				UNION(
+				       ADDCOLUMNS( CALENDAR([Last Forecast Processed],  [Last Forecast Processed]+7),
+				        "Type", "Latest",
+				        "Sort", 1
+				    ),    
+				        ADDCOLUMNS( CALENDAR([Last Forecast Processed]-1,  [Last Forecast Processed]+7),
+				        "Type", "Yesterday",
+				        "Sort", 2
+				    ),
+				       ADDCOLUMNS(
+				       DATESBETWEEN('Date Table'[calendar_date], [Calendar Min Latest Week], [Calendar Min Latest Week]+7 ),
+				        "Type", "Latest Week",
+				        "Sort", 3        
+				     ),        
+				       ADDCOLUMNS(
+				       DATESBETWEEN('Date Table'[calendar_date], [Calendar Min Last Week],  [Calendar Min Last Week] +6+7 ),
+				        "Type", "Last Week",
+				        "Sort", 4   
+				
+				       ),
+				       ADDCOLUMNS(
+				       DATESBETWEEN('Date Table'[calendar_date], [Calendar Min Latest 2 Weeks],  [Calendar Min Latest 2 Weeks] +13+7 ),
+				        "Type", "Last 2 Weeks",
+				        "Sort", 5   
+				    ),
+				     ADDCOLUMNS(
+				       DATESBETWEEN('Date Table'[calendar_date], [Last Forecast Processed] -30,  [Last Forecast Processed]+7),
+				        "Type", "Last 30 Days",
+				        "Sort", 6
+				    ),
+				  
+				       ADDCOLUMNS(
+				        CALENDAR(MIN('Date Table'[calendar_date]),MAX('Date Table'[calendar_date])),
+				        "Type", "All Time",
+				        "Sort", 7
+				    ),
+				    ADDCOLUMNS(
+				        CALENDAR(MIN('Date Table'[calendar_date]),MAX('Date Table'[calendar_date])),
+				        "Type", "Custom",
+				        "Sort", 8
+				    )
+				)
+				```
+
+	annotation PBI_Id = 81e129b8dc414c5393785c4944d30ec6
+

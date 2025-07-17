@@ -1,0 +1,123 @@
+table Events
+	lineageTag: 66a32be4-f0f3-4bf5-b498-c7b06ba06762
+
+	column event_start_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 22ed829f-6bcb-4e10-8385-34eaaa6ad606
+		summarizeBy: none
+		sourceColumn: event_start_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column event_end_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 5ebbdaa0-3a3a-4081-b615-ee506ee454ad
+		summarizeBy: none
+		sourceColumn: event_end_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Category
+		dataType: string
+		lineageTag: 2d0e4710-6b88-4768-b067-7e35a06369db
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: 853094ae-5bb5-4f01-b82a-d2def9229003
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Start Date Time'
+		dataType: dateTime
+		formatString: d/mm/yy hh:nn
+		lineageTag: 25e25ff5-ed74-4fec-a0ea-b1b11ca14425
+		summarizeBy: none
+		sourceColumn: Start Date Time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'End Date Time'
+		dataType: dateTime
+		formatString: d/mm/yy hh:nn
+		lineageTag: 3ba3feb8-278f-4269-a4e8-80301a45e4a6
+		summarizeBy: none
+		sourceColumn: End Date Time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Replacement Value'
+		dataType: string
+		lineageTag: 01c97a15-30b6-43ec-a2bb-61a43ab3aaa0
+		summarizeBy: none
+		sourceColumn: Replacement Value
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Duration in Days'
+		dataType: int64
+		formatString: 0
+		lineageTag: a3793182-1408-4fec-bf02-5e38903269f5
+		summarizeBy: none
+		sourceColumn: Duration in Days
+
+		annotation SummarizationSetBy = User
+
+	column 'Duration in Hours'
+		dataType: int64
+		formatString: 0
+		lineageTag: bcda5463-f593-4a9c-92b6-23a95150a4b5
+		summarizeBy: none
+		sourceColumn: Duration in Hours
+
+		annotation SummarizationSetBy = User
+
+	column 'Data Columns'
+		dataType: string
+		lineageTag: 6d64128a-f3b3-43ca-8bd3-ca2b4dd8597a
+		summarizeBy: none
+		sourceColumn: Data Columns
+
+		annotation SummarizationSetBy = Automatic
+
+	column event_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 57454f35-7403-4e88-b449-bca90416bff7
+		summarizeBy: none
+		sourceColumn: event_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Events = m
+		mode: import
+		queryGroup: Forecast
+		source = ```
+				let
+				    Source = Value.NativeQuery(DatabricksMultiCloud.Catalogs(DB_HOST, DB_PATH, [Catalog="dev_generation", Database=null, EnableAutomaticProxyDiscovery=null]){[Name="dev_generation",Kind="Database"]}[Data], "SELECT * FROM dev_generation.geothermal.reporting_geo_station_events_table 
+				    LIMIT " & DB_LIMITS_ROWS
+				    
+				    , null, [EnableFolding=true])
+				in
+				    Source
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

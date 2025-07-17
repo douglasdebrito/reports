@@ -1,0 +1,129 @@
+table 'DQ 2 Min Avg Last 24h'
+	lineageTag: 7f285457-2545-4196-b6cb-5ba45e149693
+
+	column AMBIENT_TEMP
+		dataType: double
+		sourceProviderType: double
+		lineageTag: e514a022-0411-481a-b07e-8628db955129
+		summarizeBy: sum
+		sourceColumn: AMBIENT_TEMP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column STATION_ENTHALPY
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 8c55826e-840d-45af-a063-ec5bc6b21c85
+		summarizeBy: sum
+		sourceColumn: STATION_ENTHALPY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GROSS_MW_OUTPUT
+		dataType: double
+		sourceProviderType: double
+		lineageTag: c578eada-2fc4-4ef7-adde-b56b509d9dba
+		summarizeBy: sum
+		sourceColumn: GROSS_MW_OUTPUT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column KAWERAU_TOTAL_MW
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 5468ff1e-ee2a-4866-a02a-147efcc83772
+		summarizeBy: sum
+		sourceColumn: KAWERAU_TOTAL_MW
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TOTAL_TURBINE_STEAM_FLOW
+		dataType: double
+		sourceProviderType: double
+		lineageTag: e40602fa-bd93-4aa2-8b0c-b4eee2f4b86f
+		summarizeBy: sum
+		sourceColumn: TOTAL_TURBINE_STEAM_FLOW
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MAIN_COOLING_WATER_TEMPERATURE
+		dataType: double
+		sourceProviderType: double
+		lineageTag: a3336d96-6be1-4e3a-b339-7a150a247464
+		summarizeBy: sum
+		sourceColumn: MAIN_COOLING_WATER_TEMPERATURE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HUMIDITY
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 41dddda1-3a98-4402-a3b2-8a68c0199f6e
+		summarizeBy: sum
+		sourceColumn: HUMIDITY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HP_STEAM_FLOW_ALL
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 7d0ef4cc-dd7b-4ac0-97e6-689d248a9712
+		summarizeBy: sum
+		sourceColumn: HP_STEAM_FLOW_ALL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LP_STEAM_FLOW
+		dataType: double
+		sourceProviderType: double
+		lineageTag: a18bac95-c5e9-4065-b073-0b955afea2cc
+		summarizeBy: sum
+		sourceColumn: LP_STEAM_FLOW
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HP_BRINE_FLOW
+		dataType: double
+		sourceProviderType: double
+		lineageTag: e906924d-6c7a-4962-be29-79fb2e24beeb
+		summarizeBy: sum
+		sourceColumn: HP_BRINE_FLOW
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'DQ 2 Min Avg Last 24h' = m
+		mode: directQuery
+		queryGroup: DQ
+		source =
+				let
+				    Source = DatabricksMultiCloud.Catalogs(DB_HOST, DB_PATH, [Catalog="dev_generation", Database=null, EnableAutomaticProxyDiscovery=null]),
+				    dev_generation_Database = Source{[Name="dev_generation",Kind="Database"]}[Data],
+				    geothermal_Schema = dev_generation_Database{[Name="geothermal",Kind="Schema"]}[Data],
+				    reporting_geo_2_min_avg_last_7d_v_View = geothermal_Schema{[Name="reporting_geo_2_min_bin_avg_last_24_h_v",Kind="View"]}[Data]
+				in
+				    reporting_geo_2_min_avg_last_7d_v_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

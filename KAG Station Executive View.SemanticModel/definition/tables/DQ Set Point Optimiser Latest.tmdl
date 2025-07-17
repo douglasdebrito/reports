@@ -1,0 +1,310 @@
+table 'DQ Set Point Optimiser Latest'
+	lineageTag: a9613861-4d2e-49f8-9550-cdd272805ad3
+
+	column ROW_NUM
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: d4c4ccf2-22dd-4f04-b6cc-2eaef261dea4
+		summarizeBy: sum
+		sourceColumn: ROW_NUM
+
+		annotation SummarizationSetBy = Automatic
+
+	column ts_date_time
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: ae810874-7d88-438c-bb9c-dd28a4abb9d8
+		summarizeBy: none
+		sourceColumn: ts_date_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column ts_date
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 75b848f3-f8ef-453d-8863-ec3cd7aed8bb
+		summarizeBy: none
+		sourceColumn: ts_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ts_time
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 2f817b0a-796d-43d6-b81d-126c1f121258
+		summarizeBy: none
+		sourceColumn: ts_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column ts_hour
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 22784de4-ebf4-4c5b-9582-8782548e1fe7
+		summarizeBy: none
+		sourceColumn: ts_hour
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_update_date_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 17fbec4d-944c-4554-8598-01875200a80d
+		summarizeBy: none
+		sourceColumn: model_update_date_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column TWO_PHASE_FLOW_ACTUAL
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 1f186c2b-18bd-43ea-a769-e719c7d96bf9
+		summarizeBy: sum
+		sourceColumn: TWO_PHASE_FLOW_ACTUAL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HP_STEAM_FLOW_ALL_ACTUAL
+		dataType: double
+		sourceProviderType: double
+		lineageTag: a6700c92-54a0-42d5-b5c5-efe1054e37ec
+		summarizeBy: sum
+		sourceColumn: HP_STEAM_FLOW_ALL_ACTUAL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HP_GES_STEAM_SUPPLY_ACTUAL
+		dataType: double
+		sourceProviderType: double
+		lineageTag: ee731973-7be0-4c14-807d-090ad193c419
+		summarizeBy: sum
+		sourceColumn: HP_GES_STEAM_SUPPLY_ACTUAL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HP_STEAM_FLOW_AT_TURBINE_ACTUAL
+		dataType: double
+		sourceProviderType: double
+		lineageTag: f29d3e4b-dbcd-4fdc-984d-9e0ab51fb7ae
+		summarizeBy: sum
+		sourceColumn: HP_STEAM_FLOW_AT_TURBINE_ACTUAL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LP_STEAM_FLOW_ACTUAL
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 81da21a1-71d7-4506-86dd-14efb2ebe110
+		summarizeBy: sum
+		sourceColumn: LP_STEAM_FLOW_ACTUAL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column EXHAUST_FLOW_ACTUAL
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 75c77196-5ebb-4678-9f6f-a41e9f9e2b31
+		summarizeBy: sum
+		sourceColumn: EXHAUST_FLOW_ACTUAL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HP_BRINE_FLOW_ACTUAL
+		dataType: double
+		sourceProviderType: double
+		lineageTag: fc0ccc83-29a7-4134-9ef9-243612bcdc34
+		summarizeBy: sum
+		sourceColumn: HP_BRINE_FLOW_ACTUAL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HP_STEAM_PRESSURE_ACTUAL
+		dataType: double
+		sourceProviderType: double
+		lineageTag: ee605d28-9f65-4a97-a3bb-f811886c3235
+		summarizeBy: sum
+		sourceColumn: HP_STEAM_PRESSURE_ACTUAL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LP_STEAM_PRESSURE_ACTUAL
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 01676c6f-b12a-4776-8587-dcbf4a0e4d24
+		summarizeBy: sum
+		sourceColumn: LP_STEAM_PRESSURE_ACTUAL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GROSS_MW_OUTPUT_ACTUAL
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 8d4932ae-a463-4fef-9591-55ecf26da7db
+		summarizeBy: sum
+		sourceColumn: GROSS_MW_OUTPUT_ACTUAL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NET_OUTPUT_ACTUAL
+		dataType: double
+		sourceProviderType: double
+		lineageTag: bd145264-3554-4c67-b660-c371492a9c6e
+		summarizeBy: sum
+		sourceColumn: NET_OUTPUT_ACTUAL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column hp_steam_flow_all_optimised
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 8d74b53c-5126-4c31-80e0-81f8b0e5312a
+		summarizeBy: sum
+		sourceColumn: hp_steam_flow_all_optimised
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column hp_ges_steam_supply_optimised
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 5b8fa7d7-2aaf-4f32-b73d-bf8ede17d567
+		summarizeBy: sum
+		sourceColumn: hp_ges_steam_supply_optimised
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column hp_steteam_flow_at_turbine_optimised
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 7a3af1d8-dff7-49f9-825f-24ba9cdf9861
+		summarizeBy: sum
+		sourceColumn: hp_steteam_flow_at_turbine_optimised
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column lp_steam_flow_optimised
+		dataType: double
+		sourceProviderType: double
+		lineageTag: f2d3b45b-357e-4b8d-9117-813c36f43a10
+		summarizeBy: sum
+		sourceColumn: lp_steam_flow_optimised
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column exhaust_flow_optimised
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 519bcf5f-462f-4ac3-a5f4-77468eb6d9d4
+		summarizeBy: sum
+		sourceColumn: exhaust_flow_optimised
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column hp_brine_flow_optimised
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 98a5b715-e3a6-49c2-8e17-295b825ddfeb
+		summarizeBy: sum
+		sourceColumn: hp_brine_flow_optimised
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column hp_steam_pressure_optimised
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 565d5caa-5b62-40ac-afb3-0d7dc50f9896
+		summarizeBy: sum
+		sourceColumn: hp_steam_pressure_optimised
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column lp_steam_pressure_optimised
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 440a4f1f-acac-49c1-a5d3-18565a293947
+		summarizeBy: sum
+		sourceColumn: lp_steam_pressure_optimised
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column gross_mw_output_optimised
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 8c31069c-8316-4ed9-b3b7-c0511f485f00
+		summarizeBy: sum
+		sourceColumn: gross_mw_output_optimised
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column net_output_optimised
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 5cdaa9fc-df99-486e-9c67-4ffef3e27a58
+		summarizeBy: sum
+		sourceColumn: net_output_optimised
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'DQ Set Point Optimiser Latest' = m
+		mode: directQuery
+		queryGroup: DQ
+		source =
+				let
+				    Source = DatabricksMultiCloud.Catalogs(DB_HOST, DB_PATH, [Catalog="dev_generation", Database=null, EnableAutomaticProxyDiscovery=null]),
+				    dev_generation_Database = Source{[Name="dev_generation",Kind="Database"]}[Data],
+				    geothermal_Schema = dev_generation_Database{[Name="geothermal",Kind="Schema"]}[Data],
+				    geo_halfhourly_avg_View = geothermal_Schema{[Name="reporting_geo_setpoint_optimiser_half_hourly_raw_v",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(geo_halfhourly_avg_View, each ([ROW_NUM] = 1))
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,313 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/2.1.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY22SU11",
+      "reportVersionAtImport": "5.40",
+      "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "Mercury_Data13365581797133186.json",
+      "reportVersionAtImport": "5.61",
+      "type": "RegisteredResources"
+    }
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "visible": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "publicCustomVisuals": [
+    "deneb7E15AEF80B9E4D4F8E12924291ECE89A",
+    "multiLineChartA7F3AE9EF91E48C78A2807BCA25C2765",
+    "htmlContent443BE3AD55E043BF878BED274D3A6865"
+  ],
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY22SU11",
+          "path": "BaseThemes/CY22SU11.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "check29123191888170874.png",
+          "path": "check29123191888170874.png",
+          "type": "Image"
+        },
+        {
+          "name": "churn7771552942662632.png",
+          "path": "churn7771552942662632.png",
+          "type": "Image"
+        },
+        {
+          "name": "clock438069545870327.png",
+          "path": "clock438069545870327.png",
+          "type": "Image"
+        },
+        {
+          "name": "Electricity_white3734070161967269.png",
+          "path": "Electricity_white3734070161967269.png",
+          "type": "Image"
+        },
+        {
+          "name": "forecast5386940912685474.png",
+          "path": "forecast5386940912685474.png",
+          "type": "Image"
+        },
+        {
+          "name": "full-screen7669845465693979.png",
+          "path": "full-screen7669845465693979.png",
+          "type": "Image"
+        },
+        {
+          "name": "Geothermal_white4849735505587365.png",
+          "path": "Geothermal_white4849735505587365.png",
+          "type": "Image"
+        },
+        {
+          "name": "layers6932166164556595.png",
+          "path": "layers6932166164556595.png",
+          "type": "Image"
+        },
+        {
+          "name": "layer_(1)9092645755400985.png",
+          "path": "layer_(1)9092645755400985.png",
+          "type": "Image"
+        },
+        {
+          "name": "MER0104-2023-Electric-yellow09736145491138637.png",
+          "path": "MER0104-2023-Electric-yellow09736145491138637.png",
+          "type": "Image"
+        },
+        {
+          "name": "MER0104-2023-Electricity-yello7234011043720174.png",
+          "path": "MER0104-2023-Electricity-yello7234011043720174.png",
+          "type": "Image"
+        },
+        {
+          "name": "MER0104-2023-Gas-yellow8661656766556893.png",
+          "path": "MER0104-2023-Gas-yellow8661656766556893.png",
+          "type": "Image"
+        },
+        {
+          "name": "MER0104-2023-Letter-yellow11990680503829787.png",
+          "path": "MER0104-2023-Letter-yellow11990680503829787.png",
+          "type": "Image"
+        },
+        {
+          "name": "MER0104-2023-Mobile-yellow4332367830511332.png",
+          "path": "MER0104-2023-Mobile-yellow4332367830511332.png",
+          "type": "Image"
+        },
+        {
+          "name": "MER0104-2023-Person-yellow14852546366074626.png",
+          "path": "MER0104-2023-Person-yellow14852546366074626.png",
+          "type": "Image"
+        },
+        {
+          "name": "MER0104-2023-Router-yellow_(2)7097722034980454.png",
+          "path": "MER0104-2023-Router-yellow_(2)7097722034980454.png",
+          "type": "Image"
+        },
+        {
+          "name": "Page_Banner_Only_Wider_Blue_Ba8332160887291507.png",
+          "path": "Page_Banner_Only_Wider_Blue_Ba8332160887291507.png",
+          "type": "Image"
+        },
+        {
+          "name": "Page_Banner_Only_Wider_Blue_Ba8385099548926929.png",
+          "path": "Page_Banner_Only_Wider_Blue_Ba8385099548926929.png",
+          "type": "Image"
+        },
+        {
+          "name": "Page_Banner_Wider_Blue_Back13752338695763444.png",
+          "path": "Page_Banner_Wider_Blue_Back13752338695763444.png",
+          "type": "Image"
+        },
+        {
+          "name": "planner11771923843549748.png",
+          "path": "planner11771923843549748.png",
+          "type": "Image"
+        },
+        {
+          "name": "Geothermal_white5325137420557216.png",
+          "path": "Geothermal_white5325137420557216.png",
+          "type": "Image"
+        },
+        {
+          "name": "thermometer-temperature-svgrep16542965737807624.svg",
+          "path": "thermometer-temperature-svgrep16542965737807624.svg",
+          "type": "Image"
+        },
+        {
+          "name": "Mercury_Data13365581797133186.json",
+          "path": "Mercury_Data13365581797133186.json",
+          "type": "CustomTheme"
+        },
+        {
+          "name": "icons8-trend-4804173080052735467.png",
+          "path": "icons8-trend-4804173080052735467.png",
+          "type": "Image"
+        },
+        {
+          "name": "Page_Banner_Only_Wider_Blue_Ba7127450489096383.png",
+          "path": "Page_Banner_Only_Wider_Blue_Ba7127450489096383.png",
+          "type": "Image"
+        },
+        {
+          "name": "help_(1)8856593523814826.png",
+          "path": "help_(1)8856593523814826.png",
+          "type": "Image"
+        },
+        {
+          "name": "Help_SetOptimiser_18377712296737437.png",
+          "path": "Help_SetOptimiser_18377712296737437.png",
+          "type": "Image"
+        },
+        {
+          "name": "Help_SetOptimiser_23099708843783806.png",
+          "path": "Help_SetOptimiser_23099708843783806.png",
+          "type": "Image"
+        },
+        {
+          "name": "NTGA_Part_135958485704351373.png",
+          "path": "NTGA_Part_135958485704351373.png",
+          "type": "Image"
+        },
+        {
+          "name": "NTGA_Part_26940856632075172.png",
+          "path": "NTGA_Part_26940856632075172.png",
+          "type": "Image"
+        },
+        {
+          "name": "BRIP9913757070148954.png",
+          "path": "BRIP9913757070148954.png",
+          "type": "Image"
+        },
+        {
+          "name": "Page_Banner_Only_Wider_Blue_Ba9836381333327033.png",
+          "path": "Page_Banner_Only_Wider_Blue_Ba9836381333327033.png",
+          "type": "Image"
+        },
+        {
+          "name": "Page_Banner_Only_Wider_Blue_Ba42203886724875483.png",
+          "path": "Page_Banner_Only_Wider_Blue_Ba42203886724875483.png",
+          "type": "Image"
+        },
+        {
+          "name": "Calibration_Part12939903492456224.png",
+          "path": "Calibration_Part12939903492456224.png",
+          "type": "Image"
+        },
+        {
+          "name": "Calibration_Part239568353707093307.png",
+          "path": "Calibration_Part239568353707093307.png",
+          "type": "Image"
+        },
+        {
+          "name": "2PhasePart17384492570436693.png",
+          "path": "2PhasePart17384492570436693.png",
+          "type": "Image"
+        },
+        {
+          "name": "full-screen4005879425946779.png",
+          "path": "full-screen4005879425946779.png",
+          "type": "Image"
+        },
+        {
+          "name": "Page_Banner_Only_Wider_Blue_Ba6757607583233958.png",
+          "path": "Page_Banner_Only_Wider_Blue_Ba6757607583233958.png",
+          "type": "Image"
+        },
+        {
+          "name": "Dash_Colouring289952970946296.png",
+          "path": "Dash_Colouring289952970946296.png",
+          "type": "Image"
+        },
+        {
+          "name": "Table_Gradient_Colour3172957184061288.png",
+          "path": "Table_Gradient_Colour3172957184061288.png",
+          "type": "Image"
+        },
+        {
+          "name": "Forecast_Part148944986923650147.png",
+          "path": "Forecast_Part148944986923650147.png",
+          "type": "Image"
+        },
+        {
+          "name": "Forecast_Part235834422507078234.png",
+          "path": "Forecast_Part235834422507078234.png",
+          "type": "Image"
+        },
+        {
+          "name": "table9985316856135055.png",
+          "path": "table9985316856135055.png",
+          "type": "Image"
+        },
+        {
+          "name": "close349231586338135.png",
+          "path": "close349231586338135.png",
+          "type": "Image"
+        },
+        {
+          "name": "adaptation_(1)8378405825067397.png",
+          "path": "adaptation_(1)8378405825067397.png",
+          "type": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true,
+    "useDefaultAggregateDisplayName": true
+  },
+  "slowDataSourceSettings": {
+    "isCrossHighlightingDisabled": false,
+    "isSlicerSelectionsButtonEnabled": false,
+    "isFilterSelectionsButtonEnabled": false,
+    "isFieldWellButtonEnabled": false,
+    "isApplyAllButtonEnabled": false
+  }
+}

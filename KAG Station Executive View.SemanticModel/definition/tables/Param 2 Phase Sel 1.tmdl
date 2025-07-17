@@ -1,0 +1,50 @@
+table 'Param 2 Phase Sel 1'
+	lineageTag: 75093c42-0367-4856-9468-fa4df0040fee
+
+	column 'Param 2 Phase Sel 1'
+		lineageTag: bd9bb5a0-8edc-4a8d-bbb6-af9ff3238373
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Param 2 Phase Sel 1 Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Param 2 Phase Sel 1 Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Param 2 Phase Sel 1 Fields'
+		isHidden
+		lineageTag: b328bd4e-3251-4516-a576-a2e2eac24f91
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Param 2 Phase Sel 1 Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Param 2 Phase Sel 1 Order'
+		isHidden
+		formatString: 0
+		lineageTag: 6f0aa437-02d0-43db-a569-2fa6164f40a0
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Param 2 Phase Sel 1' = calculated
+		mode: import
+		source =
+				{
+				    ("Sum of Wells", NAMEOF('_Measures_Folder'[Alert Sum of Wells]), 0),
+				    ("HP Venturi + HP Brine", NAMEOF('_Measures_Folder'[Alert HP Venturi + HP Brine]), 1),
+				    ("HP Venturi + LP Brine + LP Steam", NAMEOF('_Measures_Folder'[Alert HP Venturi + LP Brine + LP Steam]), 2),
+				    ("Total Turbine + GES + LP Brine", NAMEOF('_Measures_Folder'[Alert Total Turbine + GES + LP Brine]), 3)
+				}
+
+	annotation PBI_Id = 82c46eb817fe40bf809c9350c2cc8d7e
+

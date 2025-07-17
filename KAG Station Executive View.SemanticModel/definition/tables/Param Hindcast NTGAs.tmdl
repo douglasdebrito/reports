@@ -1,0 +1,56 @@
+table 'Param Hindcast NTGAs'
+	lineageTag: 8538d566-254e-449d-81ad-c862e73a3c8b
+
+	column Parameter
+		lineageTag: 66f88f87-f701-4310-8898-6f4e98903343
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parameter Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Parameter Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Fields'
+		isHidden
+		lineageTag: 8954e48f-b7e2-44d1-a20f-35e25aac9884
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parameter Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Order'
+		isHidden
+		formatString: 0
+		lineageTag: b63eeeb9-39b4-4b75-9b6d-849a6db0a369
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Param Hindcast NTGAs' = calculated
+		mode: import
+		source = ```
+				{
+				    ("0 t/h NTGA", NAMEOF('_Measures_Folder'[Hindcast 0 t/h NTGA Steam]), 0),
+				    ("5 t/h NTGA", NAMEOF('_Measures_Folder'[Hindcast 5 t/h NTGA Steam]), 1),
+				    ("10 t/h NTGA", NAMEOF('_Measures_Folder'[Hindcast 10 t/h NTGA Steam]), 2),
+				    ("15 t/h NTGA", NAMEOF('_Measures_Folder'[Hindcast 15 t/h NTGA Steam]), 3),
+				    ("20 t/h NTGA", NAMEOF('_Measures_Folder'[Hindcast 20 t/h NTGA Steam]), 4),
+				    ("25 t/h NTGA", NAMEOF('_Measures_Folder'[Hindcast 25 t/h NTGA Steam]), 5),
+				    ("30 t/h NTGA", NAMEOF('_Measures_Folder'[Hindcast 30 t/h NTGA Steam]), 6),
+				    ("35 t/h NTGA", NAMEOF('_Measures_Folder'[Hindcast 35 t/h NTGA Steam]), 7)
+				    
+				}
+				```
+
+	annotation PBI_Id = a5870ddfca914e6fb0626844685e1533
+

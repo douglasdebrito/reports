@@ -1,0 +1,41 @@
+table 'DQ GWh Yesterday Today'
+	lineageTag: 9f472f68-5db7-4944-a2ca-2581fb7b4b36
+
+	column net_ghwh_yesterday
+		dataType: double
+		sourceProviderType: double
+		lineageTag: e6b5a678-0832-4526-8e01-3068e450a4b0
+		summarizeBy: sum
+		sourceColumn: net_ghwh_yesterday
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column net_gwh_today
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 831f14c9-035f-4e5a-8217-9ce246f4e836
+		summarizeBy: sum
+		sourceColumn: net_gwh_today
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'DQ GWh Yesterday Today' = m
+		mode: directQuery
+		queryGroup: DQ
+		source =
+				let
+				    Source = DatabricksMultiCloud.Catalogs(DB_HOST, DB_PATH, [Catalog="dev_generation", Database=null, EnableAutomaticProxyDiscovery=null]),
+				    dev_generation_Database = Source{[Name="dev_generation",Kind="Database"]}[Data],
+				    geothermal_Schema = dev_generation_Database{[Name="geothermal",Kind="Schema"]}[Data],
+				    geo_halfhourly_avg_View = geothermal_Schema{[Name="reporting_geo_gwh_yesterday_today_v",Kind="View"]}[Data]
+				in
+				    geo_halfhourly_avg_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,6 @@
+
+DEFINE MEASURE '_Measures_Folder'[	DQ_LP_STEAM_PRESSURE_SET_POINT	]=	AVERAGE('DQ Transformation'[LP_STEAM_PRESSURE_SET_POINT])
+"
+
+
+

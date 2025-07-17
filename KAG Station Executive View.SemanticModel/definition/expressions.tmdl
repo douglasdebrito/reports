@@ -1,0 +1,146 @@
+expression DB_HOST = "mcy-dp-nonops-dev.cloud.databricks.com" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: bdd31c13-a97c-4d5a-9712-150313cfc4fd
+	queryGroup: Params
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression DB_PATH = "/sql/1.0/warehouses/718352b27a57a770" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: d357c7c8-83b5-41de-8642-77177c1c9969
+	queryGroup: Params
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression DB_LIMITS_ROWS = "1000000" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 1dc9e214-a05a-4929-afd3-9b76d5fbff0b
+	queryGroup: Params
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression 'Forecast Date Range' = ```
+		let
+		    Source = Value.NativeQuery(DatabricksMultiCloud.Catalogs(DB_HOST, DB_PATH, [Catalog="dev_generation", Database=null, EnableAutomaticProxyDiscovery=null]){[Name="dev_generation",Kind="Database"]}[Data], "SELECT * FROM dev_generation.geothermal.reporting_geo_station_model_forecast_7days_date_range_v 
+		    LIMIT " & DB_LIMITS_ROWS
+		    
+		    , null, [EnableFolding=true])
+		in
+		    Source
+		```
+	lineageTag: 0abfabed-dafd-4653-a213-9490d1cf53c5
+	queryGroup: Forecast
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression 'Forecast First Date' =
+		let
+		    Source = #"Forecast Date Range",
+		    FirstDate = List.Min(Source[first_7days_date])
+		in
+		    FirstDate
+	lineageTag: 06a019d1-e028-4f07-acf9-30285a6cd46d
+	queryGroup: Forecast
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Date
+
+expression 'Forecast Last Date' =
+		let
+		    Source = #"Forecast Date Range",
+		    FirstDate = List.Min(Source[last_7days_date])
+		in
+		    FirstDate
+	lineageTag: 612afcc7-d365-4f83-9f9c-9939a7417821
+	queryGroup: Forecast
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Date
+
+expression 'KAW1101 Node Price' = ```
+		let
+		    Source = Value.NativeQuery(DatabricksMultiCloud.Catalogs(DB_HOST, DB_PATH, [Catalog="dev_generation", Database=null, EnableAutomaticProxyDiscovery=null]){[Name="dev_generation",Kind="Database"]}[Data], "SELECT * FROM dev_generation.geothermal.reporting_geo_tid_mw_pricing_v
+		     
+		    LIMIT " & DB_LIMITS_ROWS
+		    
+		    , null, [EnableFolding=true]),
+		    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Time", type time}})
+		in
+		    #"Changed Type"
+		```
+	lineageTag: e235eae4-ca4e-46dc-8697-bb34b86ea235
+	queryGroup: Forecast
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression Transformation = ```
+		let
+		    Source = Value.NativeQuery(DatabricksMultiCloud.Catalogs(DB_HOST, DB_PATH, [Catalog="dev_generation", Database=null, EnableAutomaticProxyDiscovery=null]){[Name="dev_generation",Kind="Database"]}[Data], "SELECT * FROM dev_generation.geothermal.reporting_geo_transformation_halfhourly_v WHERE HALF_HOUR_INTERVAL_TIMESTAMP >= current_timestamp - INTERVAL 120 DAYS
+		    LIMIT " & DB_LIMITS_ROWS
+		    
+		    , null, [EnableFolding=true]),
+		    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Time", type time}, {"HALF_HOUR_INTERVAL_TIMESTAMP", type datetime}})
+		in
+		    #"Changed Type"
+		```
+	lineageTag: 3580d2f0-0ff5-4fee-8cfb-cea10f4d409e
+	queryGroup: Forecast
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression 'Forecast Ref MW Loss' =
+		let
+		    Source = Forecast,
+		    #"Removed Other Columns" = Table.SelectColumns(Source,{"TS", "7_DAYS_DATE", "megawattloss", "TS_DATE", "7_DAYS_TIME"}),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Removed Other Columns",{{"TS", type time}}),
+		    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"TS", "TS TIME"}}),
+		    #"Reordered Columns" = Table.ReorderColumns(#"Renamed Columns",{"TS_DATE", "TS TIME", "7_DAYS_DATE", "7_DAYS_TIME", "megawattloss"})
+		in
+		    #"Reordered Columns"
+	lineageTag: cecac6dc-6332-4263-ae7e-f2d6d4c7c78d
+	queryGroup: Forecast
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression 'Flow Alerts First Date' = ```
+		let
+		    Source = Value.NativeQuery(DatabricksMultiCloud.Catalogs(DB_HOST, DB_PATH, [Catalog="dev_generation", Database=null, EnableAutomaticProxyDiscovery=null]){[Name="dev_generation",Kind="Database"]}[Data], "SELECT * FROM dev_generation.geothermal.reporting_geo_flow_calibration_alerts_first_date_v 
+		    LIMIT " & DB_LIMITS_ROWS
+		    
+		    , null, [EnableFolding=true])
+		in
+		    Source
+		```
+	lineageTag: b1b23d93-0a72-45bf-b197-5ee5c8e191d2
+	queryGroup: Forecast
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression 'Flow Alerts First Date Var' =
+		let
+		    Source = #"Flow Alerts First Date",
+		    FirstDate = List.Min(Source[first_date])
+		in
+		    FirstDate
+	lineageTag: 1a4b0fe5-7a56-4769-aa88-62bb81d471bd
+	queryGroup: Forecast
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Date
+

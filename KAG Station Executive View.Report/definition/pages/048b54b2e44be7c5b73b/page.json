@@ -1,0 +1,105 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "048b54b2e44be7c5b73b",
+  "displayName": "Forecast",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "objects": {
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "203L"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "background": [
+      {
+        "properties": {
+          "image": {
+            "image": {
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Page Banner Wider Blue Back.png'"
+                  }
+                }
+              },
+              "url": {
+                "expr": {
+                  "ResourcePackageItem": {
+                    "PackageName": "RegisteredResources",
+                    "PackageType": 1,
+                    "ItemName": "Page_Banner_Wider_Blue_Back13752338695763444.png"
+                  }
+                }
+              },
+              "scaling": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Normal'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "5b67e20490a0d0749a81",
+      "target": "e4227657d6a7dc5a0810",
+      "type": "DataFilter"
+    },
+    {
+      "source": "e4227657d6a7dc5a0810",
+      "target": "5b67e20490a0d0749a81",
+      "type": "NoFilter"
+    },
+    {
+      "source": "19842f4cb25ed1b86087",
+      "target": "02290afa382a7b90cd77",
+      "type": "DataFilter"
+    },
+    {
+      "source": "5b67e20490a0d0749a81",
+      "target": "9ef99239530be0e0b6c2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "f6c8d76a969d70b18344",
+      "target": "9ef99239530be0e0b6c2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "f6c8d76a969d70b18344",
+      "target": "e5dd51c304d29babd477",
+      "type": "DataFilter"
+    },
+    {
+      "source": "f6c8d76a969d70b18344",
+      "target": "8d0aa78b82c20002ad9e",
+      "type": "DataFilter"
+    },
+    {
+      "source": "9ef99239530be0e0b6c2",
+      "target": "f6c8d76a969d70b18344",
+      "type": "DataFilter"
+    }
+  ]
+}

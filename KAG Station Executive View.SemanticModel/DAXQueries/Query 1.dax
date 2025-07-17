@@ -1,0 +1,31 @@
+DEFINE
+	VAR __DS0FilterTable = 
+		TREATAS({"Last 2 Weeks"}, 'Date Periods'[Type])
+
+	VAR __DS0FilterTable2 = 
+		TREATAS({"Actual"}, 'Date Table'[Actual Only])
+
+	VAR __DS0Core = 
+		SUMMARIZECOLUMNS(
+			'Date Table'[calendar_date],
+			__DS0FilterTable,
+			__DS0FilterTable2,
+			"Alert_HP_Steam_Flow_Actual", '_Measures_Folder'[Alert HP Steam Flow Actual],
+			"Alert_HP_Steam_Flow_Calculated", '_Measures_Folder'[Alert HP Steam Flow Calculated],
+			"Alert_HP_Brine_Actual_Median", '_Measures_Folder'[Alert HP Brine Actual Median],
+			"Measure", '_Measures_Folder'[Measure]
+		)
+
+	VAR __DS0PrimaryWindowed = 
+		TOPN(1001, __DS0Core, 'Date Table'[calendar_date], 1)
+
+EVALUATE
+	ROW(
+		"MedianAlert_HP_Steam_Flow_Actual", MEDIANX(KEEPFILTERS(__DS0Core), [Alert_HP_Steam_Flow_Actual])
+	)
+
+EVALUATE
+	__DS0PrimaryWindowed
+
+ORDER BY
+	'Date Table'[calendar_date]

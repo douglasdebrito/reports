@@ -1,0 +1,1222 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/1.4.0/schema.json",
+  "displayName": "Hindcast Net - Hour",
+  "name": "13b845f04742601879d3",
+  "options": {
+    "targetVisualNames": [
+      "e1f6031980f0edeb36b2"
+    ],
+    "suppressData": true
+  },
+  "explorationState": {
+    "version": "1.11",
+    "activeSection": "cdf4310ec19c337d171e",
+    "sections": {
+      "cdf4310ec19c337d171e": {
+        "visualContainers": {
+          "134554870c1009000288": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "d49beda471ccb65b5b06": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "def77d52c24a089960c0": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "018a6408040847705343": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "4bc8bf7881da418030b8": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "f035ca0da04c70ac301e": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "e175c17b068d85a56ae9",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Date Periods"
+                        }
+                      },
+                      "Property": "Type"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "d",
+                                "Entity": "Date Periods",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "d"
+                                            }
+                                          },
+                                          "Property": "Type"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'Last Week'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "data": [
+                    {
+                      "properties": {
+                        "startDate": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "datetime'2024-12-28T00:00:00'"
+                            }
+                          }
+                        },
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Date Periods"
+                        }
+                      },
+                      "Property": "Type"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "87ee652a8a950cd94015": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "c6007ac78ed321548fbb",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "_",
+                        "Entity": "_Measures_Folder",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 0,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "_"
+                                  }
+                                },
+                                "Property": "Custom Calendar Selected"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "1L"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Custom Calendar Selected"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "79635d3c63d0c5b7b2ff",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Date Table"
+                        }
+                      },
+                      "Property": "calendar_date"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Between'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Date Table"
+                        }
+                      },
+                      "Property": "calendar_date"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Date Table"
+                        }
+                      },
+                      "Property": "calendar_date"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "3e865d429362351704a0": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "fc988f9c2f63076cce70",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Date Period Selected No Forecast"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {}
+            }
+          },
+          "e013052b11e2eb852b62": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "4c5e60e978588589a204",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Date Table"
+                        }
+                      },
+                      "Property": "calendar_date"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "4c0e84d95f68bd5ef3a3",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Time Table"
+                        }
+                      },
+                      "Property": "Time"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d7c4645cd1fa6528a2b0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Hindcast 0 t/h NTGA Steam"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "173c1de3f27c3da4be5a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Hindcast 5 t/h NTGA Steam"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3c41ffe6959b8d98529e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Hindcast 10 t/h NTGA Steam"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f8047958a77143504b69",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Hindcast 15 t/h NTGA Steam"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "5a467ecdea00b5ec3ecf",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Hindcast 20 t/h NTGA Steam"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "0ed6f3d91c97ab443968",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Hindcast 25 t/h NTGA Steam"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "18e6cc496862a794ddf6",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Hindcast 30 t/h NTGA Steam"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "dbd118c6fc268d6f7f90",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Hindcast 35 t/h NTGA Steam"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8110764d760f20e319f6",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Hindcast Baseline"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "9ef430d9fc767650d623",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Hindcast Actual Net Output"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c1d48ef399a45031be33",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "NTGA Flow Demand Effective AVG"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "lineClusteredColumnComboChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Date Table"
+                        }
+                      },
+                      "Property": "calendar_date"
+                    }
+                  }
+                },
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Time Table"
+                        }
+                      },
+                      "Property": "Time"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Date Table"
+                        }
+                      },
+                      "Property": "calendar_date"
+                    }
+                  }
+                ]
+              },
+              "projections": {
+                "Category": [
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  },
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  }
+                ],
+                "Y2": [
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Hindcast 0 t/h NTGA Steam"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Hindcast 5 t/h NTGA Steam"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Hindcast 10 t/h NTGA Steam"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Hindcast 15 t/h NTGA Steam"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Hindcast 20 t/h NTGA Steam"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Hindcast 25 t/h NTGA Steam"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Hindcast 30 t/h NTGA Steam"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Hindcast 35 t/h NTGA Steam"
+                    }
+                  },
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  },
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  }
+                ],
+                "Y": [
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  }
+                ]
+              },
+              "parameters": {
+                "Y2": [
+                  {
+                    "expr": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Param Hindcast NTGAs"
+                          }
+                        },
+                        "Property": "Parameter"
+                      }
+                    },
+                    "index": 0,
+                    "length": 8
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "c68d13676cbdd0e93b40": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "33a96b8a9b3eac773038",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Param Hindcast NTGAs"
+                        }
+                      },
+                      "Property": "Parameter"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "advancedSlicerVisual",
+              "objects": {
+                "merge": {
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "data": [
+                    {
+                      "properties": {
+                        "isInvertedSelectionMode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "76e2fb579fa8d23b0ca3": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "57e937ddc29eb5c4b7f2",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Last Refresh"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c2bafaefaf2ed04d7092",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Last Refresh Hindcast"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "cardVisual",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Last Refresh Hindcast"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "e1f6031980f0edeb36b2": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "d5c53c1facfa6c14328f",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Date Table"
+                        }
+                      },
+                      "Property": "calendar_date"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f7c9393e6b1d0447317f",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Time Table"
+                        }
+                      },
+                      "Property": "Time"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "0f0ce5c336595dd77d3a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Hindcast 0 t/h NTGA Steam"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "57ba3820b686d386c246",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Hindcast 5 t/h NTGA Steam"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "955b3af64930f7bd1381",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Hindcast 10 t/h NTGA Steam"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "247de869607ff54edb05",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Hindcast 15 t/h NTGA Steam"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "cc50902fac7c218ecb41",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Hindcast 20 t/h NTGA Steam"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "9c87c85e80573e531b75",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Hindcast 25 t/h NTGA Steam"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e269850a6f3289d6e883",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Hindcast 30 t/h NTGA Steam"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b492eb09001cb3005c00",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Hindcast 35 t/h NTGA Steam"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "860d2fd5947b9005a06a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Hindcast Baseline"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ae893ba572992b6fb310",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Hindcast Actual Net Output"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "0ae84ba77dced33fddc7",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "NTGA Flow Demand Effective AVG"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "lineClusteredColumnComboChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Date Table"
+                        }
+                      },
+                      "Property": "calendar_date"
+                    }
+                  }
+                },
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Time Table"
+                        }
+                      },
+                      "Property": "Time"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Date Table"
+                        }
+                      },
+                      "Property": "calendar_date"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Time Table"
+                        }
+                      },
+                      "Property": "Time"
+                    }
+                  }
+                ]
+              },
+              "projections": {
+                "Y2": [
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Hindcast 0 t/h NTGA Steam"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Hindcast 5 t/h NTGA Steam"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Hindcast 10 t/h NTGA Steam"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Hindcast 15 t/h NTGA Steam"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Hindcast 20 t/h NTGA Steam"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Hindcast 25 t/h NTGA Steam"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Hindcast 30 t/h NTGA Steam"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures_Folder"
+                        }
+                      },
+                      "Property": "Hindcast 35 t/h NTGA Steam"
+                    }
+                  },
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  },
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  }
+                ],
+                "Category": [
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  },
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  }
+                ],
+                "Y": [
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  }
+                ]
+              },
+              "parameters": {
+                "Y2": [
+                  {
+                    "expr": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Param Hindcast NTGAs"
+                          }
+                        },
+                        "Property": "Parameter"
+                      }
+                    },
+                    "index": 0,
+                    "length": 8
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              },
+              "visible": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

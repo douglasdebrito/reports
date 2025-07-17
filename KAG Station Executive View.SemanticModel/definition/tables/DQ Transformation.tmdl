@@ -1,0 +1,863 @@
+table 'DQ Transformation'
+	lineageTag: c69f22ea-db7f-4d52-aecf-3f9f6aa4da82
+
+	column ts
+		dataType: dateTime
+		formatString: d/mm/yy hh:nn
+		sourceProviderType: datetime2
+		lineageTag: 26ff883e-3054-48a7-b56d-f1c4a0a43cba
+		summarizeBy: none
+		sourceColumn: ts
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column HALF_HOUR_INTERVAL_TIMESTAMP
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: b9539c1e-0bdb-4a7e-bf13-d98f392cedfc
+		summarizeBy: none
+		sourceColumn: HALF_HOUR_INTERVAL_TIMESTAMP
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 306baf30-95d4-46e7-a3c8-81b2d4426b28
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Time
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 179702f8-f929-49dd-bb80-298ee3148fcb
+		summarizeBy: none
+		sourceColumn: Time
+
+		annotation SummarizationSetBy = Automatic
+
+	column NZT_HALF_HOUR_INTERVAL_TIMESTAMP
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: d6dce67a-ef1c-4b47-af85-ba5cf374b1fb
+		summarizeBy: none
+		sourceColumn: NZT_HALF_HOUR_INTERVAL_TIMESTAMP
+
+		annotation SummarizationSetBy = Automatic
+
+	column LP_STEAM_PRESSURE_SET_POINT
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 0f8d9ce7-0a93-472c-9e3e-dca83b4c84fb
+		summarizeBy: sum
+		sourceColumn: LP_STEAM_PRESSURE_SET_POINT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column KGL_TO_TP_RTU_MW_NET
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 173365cd-3e4c-428b-8703-21d1b92e08f4
+		summarizeBy: sum
+		sourceColumn: KGL_TO_TP_RTU_MW_NET
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 1ST_BRIP_A_MOTOR_SPEED
+		dataType: double
+		sourceProviderType: double
+		lineageTag: dcf72cf2-ce62-4927-890e-070286384151
+		summarizeBy: sum
+		sourceColumn: 1ST_BRIP_A_MOTOR_SPEED
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 1ST_BRIP_B_MOTOR_SPEED
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 3c90c5e9-8102-43d5-b67c-9af47815bbfd
+		summarizeBy: sum
+		sourceColumn: 1ST_BRIP_B_MOTOR_SPEED
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 2ND_BRIP_A_CURRENT
+		dataType: double
+		sourceProviderType: double
+		lineageTag: f282e602-d796-44d1-b7d4-67646ce98ff3
+		summarizeBy: sum
+		sourceColumn: 2ND_BRIP_A_CURRENT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 2ND_BRIP_B_CURRENT
+		dataType: double
+		sourceProviderType: double
+		lineageTag: c06d2293-c725-489f-8945-ad8d3ddbaf6b
+		summarizeBy: sum
+		sourceColumn: 2ND_BRIP_B_CURRENT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BRINE_FLOW_TO_REINJECTION
+		dataType: double
+		sourceProviderType: double
+		lineageTag: bf4a54e6-e05a-4b99-b208-44c284db5f6b
+		summarizeBy: sum
+		sourceColumn: BRINE_FLOW_TO_REINJECTION
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BRINE_FLOW_TO_REINJECTION_PRESSURE
+		dataType: double
+		sourceProviderType: double
+		lineageTag: f39d5726-1c7d-4107-b933-1140525a6fe2
+		summarizeBy: sum
+		sourceColumn: BRINE_FLOW_TO_REINJECTION_PRESSURE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TOTAL_BRINE_REINJECTION_FLOW
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 7375a162-3c26-4aec-87af-101e7eb67782
+		summarizeBy: sum
+		sourceColumn: TOTAL_BRINE_REINJECTION_FLOW
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HP_BRINE_FLOW
+		dataType: double
+		sourceProviderType: double
+		lineageTag: bc498608-52f8-41e6-aef4-bb128cc47034
+		summarizeBy: sum
+		sourceColumn: HP_BRINE_FLOW
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column KA61_PROD_WELL_TWO_PHASE_FLOW
+		dataType: double
+		sourceProviderType: double
+		lineageTag: fc21935b-36fd-46ea-bdcb-368513297111
+		summarizeBy: sum
+		sourceColumn: KA61_PROD_WELL_TWO_PHASE_FLOW
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column KA52_PROD_WELL_2_PHASE_FLOW
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 27c7044e-96ab-4982-a3b9-415e643b2966
+		summarizeBy: sum
+		sourceColumn: KA52_PROD_WELL_2_PHASE_FLOW
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column KA46_PROD_WELL_2_PHASE_FLOW
+		dataType: double
+		sourceProviderType: double
+		lineageTag: bfbd904f-de1a-45f3-856e-e1143b1b669d
+		summarizeBy: sum
+		sourceColumn: KA46_PROD_WELL_2_PHASE_FLOW
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column KA45_PROD_WELL_2_PHASE_FLOW
+		dataType: double
+		sourceProviderType: double
+		lineageTag: eb07d0eb-9351-407f-a5cf-248a92c7fbd6
+		summarizeBy: sum
+		sourceColumn: KA45_PROD_WELL_2_PHASE_FLOW
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column KA41_PROD_WELL_2_PHASE_FLOW
+		dataType: double
+		sourceProviderType: double
+		lineageTag: f21f2393-3646-4715-8e68-793c91ef7ed0
+		summarizeBy: sum
+		sourceColumn: KA41_PROD_WELL_2_PHASE_FLOW
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column KA42_PROD_WELL_2_PHASE_FLOW
+		dataType: double
+		sourceProviderType: double
+		lineageTag: b24bbe54-5332-4815-946a-1291d81b50ed
+		summarizeBy: sum
+		sourceColumn: KA42_PROD_WELL_2_PHASE_FLOW
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PK06_PROD_WELL_2_PHASE_FLOW
+		dataType: double
+		sourceProviderType: double
+		lineageTag: fe3af1c7-923d-455d-9f92-d78387366275
+		summarizeBy: sum
+		sourceColumn: PK06_PROD_WELL_2_PHASE_FLOW
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PK07_PROD_WELL_2_PHASE_FLOW
+		dataType: double
+		sourceProviderType: double
+		lineageTag: b9f7e5c1-abfa-4d6c-b789-336fbe03c6a0
+		summarizeBy: sum
+		sourceColumn: PK07_PROD_WELL_2_PHASE_FLOW
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NTGA_STEAM_FLOW_DEMAND
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 93c10052-7ddc-48b7-b726-e3839a3ebd15
+		summarizeBy: sum
+		sourceColumn: NTGA_STEAM_FLOW_DEMAND
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HP_STEAM_PRESSURE
+		dataType: double
+		sourceProviderType: double
+		lineageTag: a38574bf-1632-474d-93d9-eae11563f61e
+		summarizeBy: sum
+		sourceColumn: HP_STEAM_PRESSURE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HP_STEAM_FLOW_ALL
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 9c6fe440-1489-469b-81a4-49f9ce653a82
+		summarizeBy: sum
+		sourceColumn: HP_STEAM_FLOW_ALL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LP_STEAM_PRESSURE
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 52a13ffe-91aa-4026-99ea-30e8c92f9634
+		summarizeBy: sum
+		sourceColumn: LP_STEAM_PRESSURE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LP_STEAM_PRESSURE_2
+		dataType: double
+		sourceProviderType: double
+		lineageTag: f2c31cf5-2d93-49ae-bf84-6c7ce9cac7ad
+		summarizeBy: sum
+		sourceColumn: LP_STEAM_PRESSURE_2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LP_STEAM_FLOW
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 310bb9a7-b620-4694-bf3f-26ba9b06d2c0
+		summarizeBy: sum
+		sourceColumn: LP_STEAM_FLOW
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HP_GES_STEAM_SUPPLY
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 0062317e-e8b8-4f44-8a88-5b9987390182
+		summarizeBy: sum
+		sourceColumn: HP_GES_STEAM_SUPPLY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CONDENSER_HOTWELL_TEMPERATURE
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 0013e332-2506-4479-84df-375fe0297177
+		summarizeBy: sum
+		sourceColumn: CONDENSER_HOTWELL_TEMPERATURE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column COOLING_TOWER_INLET_COND_TEMP
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 532a51d5-009a-435f-865b-52809d740554
+		summarizeBy: sum
+		sourceColumn: COOLING_TOWER_INLET_COND_TEMP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column COOL_WATER_FLOW
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 23d4edcf-5c11-43a6-a00a-edc97f5d8d9c
+		summarizeBy: sum
+		sourceColumn: COOL_WATER_FLOW
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MAIN_COOLING_WATER_TEMP
+		dataType: double
+		sourceProviderType: double
+		lineageTag: c83f31c9-9f32-4192-b2c0-4a44535000eb
+		summarizeBy: sum
+		sourceColumn: MAIN_COOLING_WATER_TEMP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TOTAL_TURBINE_STEAM_FLOW
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 80fac25d-af47-4c8b-923f-e0db89c6b1b1
+		summarizeBy: sum
+		sourceColumn: TOTAL_TURBINE_STEAM_FLOW
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TURBINE_HP_CHAMBER_PRESSURE
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 4be86434-cc14-4eef-ae17-42df30361188
+		summarizeBy: sum
+		sourceColumn: TURBINE_HP_CHAMBER_PRESSURE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TURBINE_LP_CHAMBER_PRESSURE
+		dataType: double
+		sourceProviderType: double
+		lineageTag: d9230814-8221-4f0b-9e49-f66eb8ae3203
+		summarizeBy: sum
+		sourceColumn: TURBINE_LP_CHAMBER_PRESSURE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CONDENSOR_PRESSURE_A
+		dataType: double
+		sourceProviderType: double
+		lineageTag: ef703587-a377-4c76-bba3-299a62b8a297
+		summarizeBy: sum
+		sourceColumn: CONDENSOR_PRESSURE_A
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CONDENSOR_PRESSURE_B
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 2a74bdc0-5699-4dd4-ad44-3ac0f94cb6ee
+		summarizeBy: sum
+		sourceColumn: CONDENSOR_PRESSURE_B
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CONDENSOR_PRESSURE_C
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 08f98907-86a6-4f03-a744-9087238fea69
+		summarizeBy: sum
+		sourceColumn: CONDENSOR_PRESSURE_C
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CONDENSOR_PRESSURE_D
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 65fb53ed-8f18-4ecb-b47f-8b3b848ef4fe
+		summarizeBy: sum
+		sourceColumn: CONDENSOR_PRESSURE_D
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VACCUM_PUMP_40_CURRENT
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 3077694a-9363-457a-b793-1a666ff778d0
+		summarizeBy: sum
+		sourceColumn: VACCUM_PUMP_40_CURRENT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VACCUM_PUMP_60_CURRENT
+		dataType: double
+		sourceProviderType: double
+		lineageTag: a0de9b06-2937-4a83-a007-8ae51f50e64f
+		summarizeBy: sum
+		sourceColumn: VACCUM_PUMP_60_CURRENT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VACCUM_PUMP_80_CURRENT
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 03dbfa9c-4052-4261-8dd8-3e8c2aed433b
+		summarizeBy: sum
+		sourceColumn: VACCUM_PUMP_80_CURRENT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HP_STEAM_NCG_CONTENT
+		dataType: double
+		sourceProviderType: double
+		lineageTag: d3989c92-985d-42a6-ad10-7cea291706e7
+		summarizeBy: sum
+		sourceColumn: HP_STEAM_NCG_CONTENT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GENERATOR_COOLING_AIR_TEMP_COLD_TURB
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 7253f1f9-cbf1-490a-aae9-31c24040ba9b
+		summarizeBy: sum
+		sourceColumn: GENERATOR_COOLING_AIR_TEMP_COLD_TURB
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GROSS_MW_OUTPUT
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 66fa03bc-0dca-44f7-81fb-b30579f718b9
+		summarizeBy: sum
+		sourceColumn: GROSS_MW_OUTPUT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column COOLING_TOWER_FAN_A_CURRENT
+		dataType: double
+		sourceProviderType: double
+		lineageTag: e6e2d3c4-1935-45a7-90f3-637214bc74c1
+		summarizeBy: sum
+		sourceColumn: COOLING_TOWER_FAN_A_CURRENT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column COOLING_TOWER_FAN_B_CURRENT
+		dataType: double
+		sourceProviderType: double
+		lineageTag: d002da4c-28d3-49f7-821c-c73b0f078f2e
+		summarizeBy: sum
+		sourceColumn: COOLING_TOWER_FAN_B_CURRENT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column COOLING_TOWER_FAN_C_CURRENT
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 793cb180-ad6e-4ac2-a1d2-5656f71a0ce1
+		summarizeBy: sum
+		sourceColumn: COOLING_TOWER_FAN_C_CURRENT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column COOLING_TOWER_FAN_D_CURRENT
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 4a136c40-1bb1-4374-9a3d-3ed616f012bc
+		summarizeBy: sum
+		sourceColumn: COOLING_TOWER_FAN_D_CURRENT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column COOLING_TOWER_FAN_E_CURRENT
+		dataType: double
+		sourceProviderType: double
+		lineageTag: d5c989da-d5ce-4387-8d57-6c89daf92839
+		summarizeBy: sum
+		sourceColumn: COOLING_TOWER_FAN_E_CURRENT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column COOLING_TOWER_FAN_F_CURRENT
+		dataType: double
+		sourceProviderType: double
+		lineageTag: c75d6626-8781-4e0b-a468-766dca129efe
+		summarizeBy: sum
+		sourceColumn: COOLING_TOWER_FAN_F_CURRENT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column COOLING_TOWER_FAN_G_CURRENT
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 4d7bb31c-2e59-4564-8ce2-f6f4d1f6aed6
+		summarizeBy: sum
+		sourceColumn: COOLING_TOWER_FAN_G_CURRENT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column COOLING_TOWER_FAN_H_CURRENT
+		dataType: double
+		sourceProviderType: double
+		lineageTag: aca8f211-b132-4b56-a562-3598b58eb8f5
+		summarizeBy: sum
+		sourceColumn: COOLING_TOWER_FAN_H_CURRENT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column COOLING_TOWER_FAN_I_CURRENT
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 226d55fc-561d-4199-b1fd-6355b96c15aa
+		summarizeBy: sum
+		sourceColumn: COOLING_TOWER_FAN_I_CURRENT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column COOLING_TOWER_FAN_J_CURRENT
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 12b2ef06-1935-411a-a0b6-ba2fa5016933
+		summarizeBy: sum
+		sourceColumn: COOLING_TOWER_FAN_J_CURRENT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column STG_COOLING_WATER_SUPPLY_PRESSURE
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 744e1082-e55b-44b7-a8c8-0620141d79eb
+		summarizeBy: sum
+		sourceColumn: STG_COOLING_WATER_SUPPLY_PRESSURE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AMBIENT_TEMP
+		dataType: double
+		sourceProviderType: double
+		lineageTag: e85ebb04-e1ea-4d32-8d2e-b62e16f85914
+		summarizeBy: sum
+		sourceColumn: AMBIENT_TEMP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HUMIDITY
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 388895dd-6cb0-49f8-8fbb-c329ba473976
+		summarizeBy: sum
+		sourceColumn: HUMIDITY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column KAWERAU_TOTAL_MW
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 862e79e0-0458-41da-a7db-847365d0c09f
+		summarizeBy: sum
+		sourceColumn: KAWERAU_TOTAL_MW
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NET_POWER
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 691c0c6d-6a68-4b3e-a768-8d15e9779f7f
+		summarizeBy: sum
+		sourceColumn: NET_POWER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PARASITIC_LOAD
+		dataType: double
+		sourceProviderType: double
+		lineageTag: d6cb60e5-bc8a-47cb-9af6-409f4e14e6c8
+		summarizeBy: sum
+		sourceColumn: PARASITIC_LOAD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column STATION_ENTHALPY
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 9c8bdf6b-81b9-4cc1-90ad-4d565e9050ac
+		summarizeBy: sum
+		sourceColumn: STATION_ENTHALPY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Cooling_tower_fan_total_current
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 3491be64-259d-4699-ac4d-5dde51e389e6
+		summarizeBy: sum
+		sourceColumn: Cooling_tower_fan_total_current
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Wbt
+		dataType: double
+		sourceProviderType: double
+		lineageTag: fdcfa6b1-8eee-4a5a-8500-e1788691aeee
+		summarizeBy: sum
+		sourceColumn: Wbt
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Wbt_lag_1hr
+		dataType: double
+		sourceProviderType: double
+		lineageTag: b09a7745-c41f-4841-a40f-1b014606d5ed
+		summarizeBy: sum
+		sourceColumn: Wbt_lag_1hr
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Is_GESSystem_Current_40_60_80_GES
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 53a64934-72aa-4aa6-a3f8-cce0f793379f
+		summarizeBy: sum
+		sourceColumn: Is_GESSystem_Current_40_60_80_GES
+
+		annotation SummarizationSetBy = Automatic
+
+	column Is_GESSystem_Current_80_GES
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 0a16647d-57d7-4e4d-9653-240514c4d2a9
+		summarizeBy: sum
+		sourceColumn: Is_GESSystem_Current_80_GES
+
+		annotation SummarizationSetBy = Automatic
+
+	column Is_GESSystem_Current_60_GES
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 45152d9d-c41e-456c-a48e-ec92858ef0f4
+		summarizeBy: sum
+		sourceColumn: Is_GESSystem_Current_60_GES
+
+		annotation SummarizationSetBy = Automatic
+
+	column Is_GESSystem_Current_40_60_GES
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: d33f4a7c-b582-4e68-b1d2-71edf01bb432
+		summarizeBy: sum
+		sourceColumn: Is_GESSystem_Current_40_60_GES
+
+		annotation SummarizationSetBy = Automatic
+
+	column Is_GESSystem_Current_60_80_GES
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 6e94d582-b098-433b-b007-7c7a8d502be9
+		summarizeBy: sum
+		sourceColumn: Is_GESSystem_Current_60_80_GES
+
+		annotation SummarizationSetBy = Automatic
+
+	column Is_GESSystem_Current_40_80_GES
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 31b13ef5-2198-4063-93d1-a5a7541bd120
+		summarizeBy: sum
+		sourceColumn: Is_GESSystem_Current_40_80_GES
+
+		annotation SummarizationSetBy = Automatic
+
+	column Is_GES_System_Current
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: ab675e5c-0292-4538-ba07-410a7d8820a6
+		summarizeBy: none
+		sourceColumn: Is_GES_System_Current
+
+		annotation SummarizationSetBy = Automatic
+
+	column GES_constant
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 7cf1eec3-5156-4995-b24e-566a6b4caac1
+		summarizeBy: sum
+		sourceColumn: GES_constant
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Is_BRIPSystem_1st_2nd_Stage
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: d1274c4f-4929-40f3-89d3-37dd629aabe5
+		summarizeBy: sum
+		sourceColumn: Is_BRIPSystem_1st_2nd_Stage
+
+		annotation SummarizationSetBy = Automatic
+
+	column Is_BRIPSystem_1st_Stage_Only
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 670cb121-b29f-4dc5-b6c4-51a86f650382
+		summarizeBy: sum
+		sourceColumn: Is_BRIPSystem_1st_Stage_Only
+
+		annotation SummarizationSetBy = Automatic
+
+	column Is_BRIPSystem_Reinjection_Offline
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 9a2df3fc-cfaf-43ea-aeba-a86a8f763844
+		summarizeBy: sum
+		sourceColumn: Is_BRIPSystem_Reinjection_Offline
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'DQ Transformation' = m
+		mode: directQuery
+		queryGroup: DQ
+		source =
+				let
+				    Source = DatabricksMultiCloud.Catalogs(DB_HOST, DB_PATH, [Catalog="dev_generation", Database=null, EnableAutomaticProxyDiscovery=null]),
+				    dev_generation_Database = Source{[Name="dev_generation",Kind="Database"]}[Data],
+				    geothermal_Schema = dev_generation_Database{[Name="geothermal",Kind="Schema"]}[Data],
+				    geo_halfhourly_avg_View = geothermal_Schema{[Name="reporting_geo_transformation_halfhourly_latest_days_v",Kind="View"]}[Data]
+				in
+				    geo_halfhourly_avg_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

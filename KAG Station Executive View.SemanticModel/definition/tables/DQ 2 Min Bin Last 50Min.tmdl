@@ -1,0 +1,228 @@
+table 'DQ 2 Min Bin Last 50Min'
+	lineageTag: b11b564e-28d9-4e20-b9fd-05bb195d6043
+
+	column AMBIENT_TEMP
+		dataType: double
+		sourceProviderType: double
+		lineageTag: e63cbde4-04b8-4a13-b286-4ca4d2639bf0
+		summarizeBy: sum
+		sourceColumn: AMBIENT_TEMP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column STATION_ENTHALPY
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 4a56de43-22a8-459f-b00a-fda72ff2fcc3
+		summarizeBy: sum
+		sourceColumn: STATION_ENTHALPY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GROSS_MW_OUTPUT
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 5fd88640-bc43-4e67-9474-b87b94d81d91
+		summarizeBy: sum
+		sourceColumn: GROSS_MW_OUTPUT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column KAWERAU_TOTAL_MW
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 218d10ba-5d04-4aa3-85f0-69d4686a266d
+		summarizeBy: sum
+		sourceColumn: KAWERAU_TOTAL_MW
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TOTAL_TURBINE_STEAM_FLOW
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 5fbf1ae9-be65-45ce-979c-72deee0a611c
+		summarizeBy: sum
+		sourceColumn: TOTAL_TURBINE_STEAM_FLOW
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MAIN_COOLING_WATER_TEMPERATURE
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 0671b325-9b33-49fd-acdd-103d0c996721
+		summarizeBy: sum
+		sourceColumn: MAIN_COOLING_WATER_TEMPERATURE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HP_STEAM_FLOW_ALL
+		dataType: double
+		sourceProviderType: double
+		lineageTag: a42d81b2-f3f6-4dde-9c7d-32add5449bc1
+		summarizeBy: sum
+		sourceColumn: HP_STEAM_FLOW_ALL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LP_STEAM_FLOW
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 9883b23e-2852-49c7-b79e-d85c17406f0c
+		summarizeBy: sum
+		sourceColumn: LP_STEAM_FLOW
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HUMIDITY
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 7a8feb29-7c41-4b54-8a5e-d16a679bcd6e
+		summarizeBy: sum
+		sourceColumn: HUMIDITY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HP_BRINE_FLOW
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 18cbfc7e-8c81-4253-bbc8-46764049abac
+		summarizeBy: sum
+		sourceColumn: HP_BRINE_FLOW
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NTGA_STEAM_FLOW
+		dataType: double
+		sourceProviderType: double
+		lineageTag: f301ed53-3f80-4a1c-a352-ab90e3da7270
+		summarizeBy: sum
+		sourceColumn: NTGA_STEAM_FLOW
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ROW_NUM
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 957de6b4-215a-458c-9f78-ae75ddb0882b
+		summarizeBy: sum
+		sourceColumn: ROW_NUM
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: ddd d mmm
+		sourceProviderType: date
+		lineageTag: 7c1140a9-4c0a-48b5-8c6b-9d737d459037
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column Time
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: a0040a52-25cf-49f2-ad28-9b20e301ace8
+		summarizeBy: none
+		sourceColumn: Time
+
+		annotation SummarizationSetBy = Automatic
+
+	column slugging_limit_fletcher_ave
+		dataType: double
+		sourceProviderType: decimal(6, 2)
+		lineageTag: 0250be0c-00c8-48ef-8e13-6fed43026731
+		summarizeBy: sum
+		sourceColumn: slugging_limit_fletcher_ave
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column slugging_limit_putauaki
+		dataType: double
+		sourceProviderType: decimal(6, 2)
+		lineageTag: 53247020-d577-4d54-bed9-42eb74d61d1f
+		summarizeBy: sum
+		sourceColumn: slugging_limit_putauaki
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column slugging_limit_chh
+		dataType: double
+		sourceProviderType: decimal(6, 2)
+		lineageTag: a09c4780-fdef-4346-b6e4-7a219046a415
+		summarizeBy: sum
+		sourceColumn: slugging_limit_chh
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HP_STEAM_FLOW_AT_TURBINE
+		dataType: double
+		sourceProviderType: decimal(6, 2)
+		lineageTag: 9fbf4410-3746-4fc9-936b-d0b1ca5c4339
+		summarizeBy: sum
+		sourceColumn: HP_STEAM_FLOW_AT_TURBINE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LP_STEAM_PRESSURE_SET_POINT
+		dataType: double
+		sourceProviderType: decimal(6, 3)
+		lineageTag: f1142e5c-d012-43bb-8635-45b5316899c9
+		summarizeBy: sum
+		sourceColumn: LP_STEAM_PRESSURE_SET_POINT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'DQ 2 Min Bin Last 50Min' = m
+		mode: directQuery
+		queryGroup: DQ
+		source =
+				let
+				    Source = DatabricksMultiCloud.Catalogs(DB_HOST, DB_PATH, [Catalog="dev_generation", Database=null, EnableAutomaticProxyDiscovery=null]),
+				    dev_generation_Database = Source{[Name="dev_generation",Kind="Database"]}[Data],
+				    geothermal_Schema = dev_generation_Database{[Name="geothermal",Kind="Schema"]}[Data],
+				    geo_halfhourly_avg_View = geothermal_Schema{[Name="reporting_geo_2_min_bin_last_50_min_v",Kind="View"]}[Data]
+				in
+				    geo_halfhourly_avg_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

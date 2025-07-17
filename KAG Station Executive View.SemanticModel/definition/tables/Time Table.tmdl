@@ -1,0 +1,241 @@
+table 'Time Table'
+	lineageTag: 9a9313dd-3206-4e19-a627-96264eb1dd80
+
+	column Time
+		dataType: dateTime
+		formatString: hh:nn
+		lineageTag: 48d34181-6ece-4ee3-ae92-7774cd918e4d
+		summarizeBy: none
+		sourceColumn: Time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column Hour
+		dataType: int64
+		formatString: 0
+		lineageTag: 9ffc928a-9200-441e-bd39-ca62ec55445e
+		summarizeBy: sum
+		sourceColumn: Hour
+
+		annotation SummarizationSetBy = Automatic
+
+	column Minute
+		dataType: int64
+		formatString: 0
+		lineageTag: 18cf380d-7fdc-4de2-a508-8a578dd895d1
+		summarizeBy: sum
+		sourceColumn: Minute
+
+		annotation SummarizationSetBy = Automatic
+
+	column Second
+		dataType: double
+		lineageTag: 6b99b753-58ec-4b13-9155-6a39d489195e
+		summarizeBy: sum
+		sourceColumn: Second
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AM/PM
+		dataType: string
+		lineageTag: 7dfaa9b4-0e6c-4778-8b2b-3860f8c1c9d8
+		summarizeBy: none
+		sourceColumn: AM/PM
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hour Label'
+		dataType: string
+		lineageTag: bd0a9575-0bcf-4fe2-b94c-86e59b18a52a
+		summarizeBy: none
+		sourceColumn: Hour Label
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Minute Label'
+		dataType: string
+		lineageTag: ac4e0f82-edf1-49de-a328-4b3bc295d72d
+		summarizeBy: none
+		sourceColumn: Minute Label
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Second Label'
+		dataType: string
+		lineageTag: 5d6444f7-3443-4559-b081-a5dec1070bcc
+		summarizeBy: none
+		sourceColumn: Second Label
+
+		annotation SummarizationSetBy = Automatic
+
+	column TimeKey
+		dataType: double
+		lineageTag: 41ecacf7-8820-48b4-9659-820748d181a5
+		summarizeBy: count
+		sourceColumn: TimeKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Hour Bin 12'
+		dataType: double
+		lineageTag: 9cab5b6a-a952-4401-855d-7afd61d9408c
+		summarizeBy: sum
+		sourceColumn: Hour Bin 12
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Hour Bin 8'
+		dataType: int64
+		formatString: 0
+		lineageTag: ac0b4db6-11bb-4b5a-883f-54f90198583c
+		summarizeBy: sum
+		sourceColumn: Hour Bin 8
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hour Bin 6'
+		dataType: int64
+		formatString: 0
+		lineageTag: bf83510c-47df-4fc8-8687-520d95e3ed55
+		summarizeBy: sum
+		sourceColumn: Hour Bin 6
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hour Bin 4'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1f0d1093-0e1c-4084-bf3e-1cb250131a60
+		summarizeBy: sum
+		sourceColumn: Hour Bin 4
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hour Bin 3'
+		dataType: int64
+		formatString: 0
+		lineageTag: ab4956ad-74ff-4d78-a521-f8cfb9cc9a1c
+		summarizeBy: sum
+		sourceColumn: Hour Bin 3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hour Bin 2'
+		dataType: int64
+		formatString: 0
+		lineageTag: e36f19ec-cdcf-4dd3-b789-52cc7eb54657
+		summarizeBy: sum
+		sourceColumn: Hour Bin 2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Minute Bin 30'
+		dataType: double
+		lineageTag: e68e2cbd-d442-4cb7-b0cf-f50919db23ed
+		summarizeBy: sum
+		sourceColumn: Minute Bin 30
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Minute Bin 15'
+		dataType: double
+		lineageTag: 43349178-84a2-4fcc-a33f-99405e645f5e
+		summarizeBy: sum
+		sourceColumn: Minute Bin 15
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Minute Bin 10'
+		dataType: double
+		lineageTag: 2749baef-aa76-40c7-8ec8-76dc7b992992
+		summarizeBy: sum
+		sourceColumn: Minute Bin 10
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Time Text'
+		dataType: string
+		lineageTag: 76c1fb90-d962-40cc-b875-ac67046b88ad
+		summarizeBy: none
+		sourceColumn: Time Text
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Time Table' = m
+		mode: import
+		queryGroup: Calendar
+		source =
+				let
+				    Source = List.Times(#time(0,0,0),48,#duration(0 ,0,30,0)),
+				    #"Converted to Table" = Table.FromList(Source, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+				    #"Renamed Columns" = Table.RenameColumns(#"Converted to Table",{{"Column1", "Time"}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"Time", type time}}),
+				    #"Inserted Hour" = Table.AddColumn(#"Changed Type", "Hour", each Time.Hour([Time]), Int64.Type),
+				    #"Inserted Minute" = Table.AddColumn(#"Inserted Hour", "Minute", each Time.Minute([Time]), Int64.Type),
+				    #"Inserted Second" = Table.AddColumn(#"Inserted Minute", "Second", each Time.Second([Time]), type number),
+				    #"Added Conditional Column" = Table.AddColumn(#"Inserted Second", "AM/PM", each if [Hour] < 12 then "a.m." else "p.m."),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Added Conditional Column",{{"AM/PM", type text}}),
+				    #"Duplicated Column" = Table.DuplicateColumn(#"Changed Type1", "Time", "Time - Copy"),
+				    #"Removed Columns" = Table.RemoveColumns(#"Duplicated Column",{"Time - Copy"}),
+				    #"Duplicated Column1" = Table.DuplicateColumn(#"Removed Columns", "Hour", "Hour - Copy"),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Duplicated Column1",{{"Hour - Copy", "Hour label"}}),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Renamed Columns1",{{"Hour label", type text}}),
+				    #"Removed Columns1" = Table.RemoveColumns(#"Changed Type2",{"Hour label"}),
+				    #"Inserted Prefix" = Table.AddColumn(#"Removed Columns1", "Prefix", each "0" & Text.From([Hour], "en-NZ"), type text),
+				    #"Renamed Columns2" = Table.RenameColumns(#"Inserted Prefix",{{"Prefix", "Hour Label"}}),
+				    #"Extracted Last Characters" = Table.TransformColumns(#"Renamed Columns2", {{"Hour Label", each Text.End(_, 2), type text}}),
+				    #"Inserted Prefix1" = Table.AddColumn(#"Extracted Last Characters", "Prefix", each "0" & Text.From([Minute], "en-NZ"), type text),
+				    #"Renamed Columns3" = Table.RenameColumns(#"Inserted Prefix1",{{"Prefix", "Minute Label"}}),
+				    #"Extracted Last Characters1" = Table.TransformColumns(#"Renamed Columns3", {{"Minute Label", each Text.End(_, 2), type text}}),
+				    #"Inserted Prefix2" = Table.AddColumn(#"Extracted Last Characters1", "Prefix", each "0" & Text.From([Second], "en-NZ"), type text),
+				    #"Renamed Columns4" = Table.RenameColumns(#"Inserted Prefix2",{{"Prefix", "Second Label"}}),
+				    #"Extracted Last Characters2" = Table.TransformColumns(#"Renamed Columns4", {{"Second Label", each Text.End(_, 2), type text}}),
+				    #"Added Index" = Table.AddIndexColumn(#"Extracted Last Characters2", "Index", 0, 1),
+				    #"Renamed Columns5" = Table.RenameColumns(#"Added Index",{{"Index", "TimeKey"}}),
+				    #"Inserted Modulo" = Table.AddColumn(#"Renamed Columns5", "Modulo", each Number.Mod([Hour], 12), type number),
+				    #"Renamed Columns6" = Table.RenameColumns(#"Inserted Modulo",{{"Modulo", "Hour Bin 12"}}),
+				    #"Inserted Integer-Division" = Table.AddColumn(#"Renamed Columns6", "Integer-Division", each Number.IntegerDivide([Hour], 8), Int64.Type),
+				    #"Renamed Columns7" = Table.RenameColumns(#"Inserted Integer-Division",{{"Integer-Division", "Hour Bin 8"}}),
+				    #"Inserted Integer-Division1" = Table.AddColumn(#"Renamed Columns7", "Integer-Division", each Number.IntegerDivide([Hour], 6), Int64.Type),
+				    #"Renamed Columns8" = Table.RenameColumns(#"Inserted Integer-Division1",{{"Integer-Division", "Hour Bin 6"}}),
+				    #"Inserted Integer-Division2" = Table.AddColumn(#"Renamed Columns8", "Integer-Division", each Number.IntegerDivide([Hour], 4), Int64.Type),
+				    #"Renamed Columns9" = Table.RenameColumns(#"Inserted Integer-Division2",{{"Integer-Division", "Hour Bin 4"}}),
+				    #"Inserted Integer-Division3" = Table.AddColumn(#"Renamed Columns9", "Integer-Division", each Number.IntegerDivide([Hour], 3), Int64.Type),
+				    #"Renamed Columns10" = Table.RenameColumns(#"Inserted Integer-Division3",{{"Integer-Division", "Hour Bin 3"}}),
+				    #"Inserted Integer-Division4" = Table.AddColumn(#"Renamed Columns10", "Integer-Division", each Number.IntegerDivide([Hour], 2), Int64.Type),
+				    #"Renamed Columns11" = Table.RenameColumns(#"Inserted Integer-Division4",{{"Integer-Division", "Hour Bin 2"}}),
+				    #"Inserted Integer-Division5" = Table.AddColumn(#"Renamed Columns11", "Integer-Division", each Number.IntegerDivide([Minute], 30), Int64.Type),
+				    #"Multiplied Column" = Table.TransformColumns(#"Inserted Integer-Division5", {{"Integer-Division", each _ * 30, type number}}),
+				    #"Renamed Columns12" = Table.RenameColumns(#"Multiplied Column",{{"Integer-Division", "Minute Bin 30"}}),
+				    #"Inserted Integer-Division6" = Table.AddColumn(#"Renamed Columns12", "Integer-Division", each Number.IntegerDivide([Minute], 15), Int64.Type),
+				    #"Multiplied Column1" = Table.TransformColumns(#"Inserted Integer-Division6", {{"Integer-Division", each _ * 15, type number}}),
+				    #"Renamed Columns13" = Table.RenameColumns(#"Multiplied Column1",{{"Integer-Division", "Minute Bin 15"}}),
+				    #"Inserted Integer-Division7" = Table.AddColumn(#"Renamed Columns13", "Integer-Division", each Number.IntegerDivide([Minute], 10), Int64.Type),
+				    #"Multiplied Column2" = Table.TransformColumns(#"Inserted Integer-Division7", {{"Integer-Division", each _ * 10, type number}}),
+				    #"Renamed Columns14" = Table.RenameColumns(#"Multiplied Column2",{{"Integer-Division", "Minute Bin 10"}}),
+				    #"Removed Duplicates" = Table.Distinct(#"Renamed Columns14", {"Time"}),
+				    #"Inserted Merged Column" = Table.AddColumn(#"Removed Duplicates", "Merged", each Text.Combine({[Hour Label], [Minute Label]}, ":"), type text),
+				    #"Renamed Columns15" = Table.RenameColumns(#"Inserted Merged Column",{{"Merged", "Time Text"}})
+				in
+				    #"Renamed Columns15"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

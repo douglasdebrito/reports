@@ -1,0 +1,421 @@
+table Forecast
+	lineageTag: bf918f65-9dcf-4e5f-9046-3468aae119eb
+
+	column 7_DAYS
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 5d598ce3-a62d-4f88-87e9-22fe04685668
+		summarizeBy: none
+		sourceColumn: 7_DAYS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 7_DAYS_DATE
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c9e7254d-effd-49f4-a02c-8da1232424a9
+		summarizeBy: none
+		sourceColumn: 7_DAYS_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 7_DAYS_TIME
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 69e239d0-e97e-4a09-85d9-032544069b46
+		summarizeBy: none
+		sourceColumn: 7_DAYS_TIME
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column GROSS_MW_OUTPUT
+		dataType: double
+		lineageTag: 4eca8ded-e88c-4e6d-b040-bbf3c157bca5
+		summarizeBy: sum
+		sourceColumn: GROSS_MW_OUTPUT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AMBIENT_TEMP
+		dataType: double
+		lineageTag: 8d34a425-0341-4402-8c21-86a61677ee6b
+		summarizeBy: sum
+		sourceColumn: AMBIENT_TEMP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column KAWERAU_TOTAL_MW
+		dataType: double
+		lineageTag: 7d4dd496-2095-4057-955d-5e75d1652f11
+		summarizeBy: sum
+		sourceColumn: KAWERAU_TOTAL_MW
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NET_POWER
+		dataType: double
+		lineageTag: 31c23571-66fa-4200-b369-c2701c104857
+		summarizeBy: sum
+		sourceColumn: NET_POWER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PARASITIC_LOAD
+		dataType: double
+		lineageTag: 6d9b2240-fc86-4285-9ee8-1dee74aa2560
+		summarizeBy: sum
+		sourceColumn: PARASITIC_LOAD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column STATION_ENTHALPY
+		dataType: double
+		lineageTag: f2e1a626-df37-4a2d-ab2f-2046b0edb2d5
+		summarizeBy: sum
+		sourceColumn: STATION_ENTHALPY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Gross_generator_output
+		dataType: double
+		lineageTag: f9774262-f02a-453e-aed9-bc59cdc9a27c
+		summarizeBy: sum
+		sourceColumn: Gross_generator_output
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Forecast_gross_output
+		dataType: double
+		lineageTag: 281dfe6a-714b-4ca9-be96-af7feb68b2d8
+		summarizeBy: sum
+		sourceColumn: Forecast_gross_output
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NET_OUTPUT_ACTUAL
+		dataType: double
+		lineageTag: 7f3510c0-5167-4331-b464-73514f7e0d7a
+		summarizeBy: sum
+		sourceColumn: NET_OUTPUT_ACTUAL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Forecast_net_output
+		dataType: double
+		lineageTag: eb935b6d-02a6-45bf-b2d9-b05f6f3c5259
+		summarizeBy: sum
+		sourceColumn: Forecast_net_output
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GROSS_MW_OUTPUT_EFFECTIVE
+		dataType: double
+		lineageTag: b063b013-a878-47d7-ba4b-53e52bb868fc
+		summarizeBy: sum
+		sourceColumn: GROSS_MW_OUTPUT_EFFECTIVE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AMBIENT_TEMP_EFFECTIVE
+		dataType: double
+		lineageTag: 6103cbde-fc00-4430-b985-f4a3b7a428e8
+		summarizeBy: sum
+		sourceColumn: AMBIENT_TEMP_EFFECTIVE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NET_OUTPUT_EFFECTIVE
+		dataType: double
+		lineageTag: 928c1427-fcc1-44f3-a9dd-8850eaa7037b
+		summarizeBy: sum
+		sourceColumn: NET_OUTPUT_EFFECTIVE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Steam Release' =
+			if( WEEKDAY('Forecast'[7_DAYS_DATE]) = 4 && 'Forecast'[7_DAYS_TIME] >= TIME(8,0,0) && 'Forecast'[7_DAYS_TIME] <= TIME(13,0,0) ,1,0 )
+			--Lydia requested an adjusmment on the Min of the Net Output on the KPI visual, this adjustment is to filter out Net Output from Wednesday from 8:00 to 13:00 when it's happens the planned maintenance. Therefore the min values will be much smaller than the usual operational outputs
+		formatString: 0
+		lineageTag: bed793ff-bcd5-4223-a38d-b34ac064dc12
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column STATION_ENTHALPY_EFFECTIVE
+		dataType: double
+		lineageTag: 60eda011-0909-4e87-bd14-9b4888098e54
+		summarizeBy: sum
+		sourceColumn: STATION_ENTHALPY_EFFECTIVE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Latest_NZEM_Price
+		dataType: double
+		lineageTag: 3d0f20e8-3b0b-4388-85b6-001ab01d0b0a
+		summarizeBy: sum
+		sourceColumn: Latest_NZEM_Price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'NTGA Cost' = DIVIDE('Forecast'[NTGA_STEAM_FLOW_DEMAND_EFFECTIVE] * 0.085 *'Forecast'[Latest_NZEM_Price], 2)
+		lineageTag: f3c82af4-ebec-4601-ad07-71dd7c858b50
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HUMIDITY
+		dataType: double
+		lineageTag: a56fe1f8-b07f-453f-8592-1a030623fda6
+		summarizeBy: sum
+		sourceColumn: HUMIDITY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NTGA_STEAM_FLOW_DEMAND_EFFECTIVE
+		dataType: double
+		lineageTag: a9a7b09c-043d-44ab-9d94-64a817cd81d5
+		summarizeBy: sum
+		sourceColumn: NTGA_STEAM_FLOW_DEMAND_EFFECTIVE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Is_GES_System_Current
+		dataType: string
+		lineageTag: 3361e4a9-7be2-4cfe-a499-376e0a2684fc
+		summarizeBy: none
+		sourceColumn: Is_GES_System_Current
+
+		annotation SummarizationSetBy = Automatic
+
+	column Is_BRIPSystem_1st_2nd_Stage
+		dataType: int64
+		formatString: 0
+		lineageTag: 60c3e332-18f6-407a-80eb-e9b7feea4ed7
+		summarizeBy: sum
+		sourceColumn: Is_BRIPSystem_1st_2nd_Stage
+
+		annotation SummarizationSetBy = Automatic
+
+	column Is_BRIPSystem_1st_Stage_Only
+		dataType: int64
+		formatString: 0
+		lineageTag: 17ba774e-8222-4f7a-8aab-94e67c5b004a
+		summarizeBy: sum
+		sourceColumn: Is_BRIPSystem_1st_Stage_Only
+
+		annotation SummarizationSetBy = Automatic
+
+	column Is_BRIPSystem_Reinjection_Offline
+		dataType: int64
+		formatString: 0
+		lineageTag: d25032fc-aed5-4591-b460-d31b32fc90d4
+		summarizeBy: sum
+		sourceColumn: Is_BRIPSystem_Reinjection_Offline
+
+		annotation SummarizationSetBy = Automatic
+
+	column temperature
+		dataType: double
+		lineageTag: f028b36c-eb1f-4503-a106-f7c82c501527
+		summarizeBy: sum
+		sourceColumn: temperature
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column relativehumidity
+		dataType: double
+		lineageTag: 878ec05b-415e-4641-88f7-79c5699116c7
+		summarizeBy: sum
+		sourceColumn: relativehumidity
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column future_megawattloss
+		dataType: double
+		lineageTag: 43a39813-5ad8-4a61-b43f-db6f61f3be6e
+		summarizeBy: sum
+		sourceColumn: future_megawattloss
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column megawattloss
+		dataType: double
+		lineageTag: e094a0c1-dff4-45ed-bb5b-f9dd9bab1637
+		summarizeBy: sum
+		sourceColumn: megawattloss
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TS
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 98e428ff-f6e7-472e-b2e9-e3d11b4128ac
+		summarizeBy: none
+		sourceColumn: TS
+
+		annotation SummarizationSetBy = Automatic
+
+	column TS_DATE
+		dataType: dateTime
+		formatString: d/mm/yy
+		lineageTag: 323aee54-68fc-47af-880f-0f895f1a6056
+		summarizeBy: none
+		sourceColumn: TS_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column HALF_HOUR_INTERVAL_TIMESTAMP
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 37cb39f6-c13e-49c6-9ac4-56b617c366e1
+		summarizeBy: none
+		sourceColumn: HALF_HOUR_INTERVAL_TIMESTAMP
+
+		annotation SummarizationSetBy = Automatic
+
+	column HALF_HOUR_INTERVAL_TIMESTAMP_TIME
+		dataType: string
+		lineageTag: a4725d94-5f54-4485-a032-a2c63062b4ed
+		summarizeBy: none
+		sourceColumn: HALF_HOUR_INTERVAL_TIMESTAMP_TIME
+
+		annotation SummarizationSetBy = Automatic
+
+	column CURRENT_TIME
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 08b04ed3-5e51-4191-b8c4-592c38579949
+		summarizeBy: none
+		sourceColumn: CURRENT_TIME
+
+		annotation SummarizationSetBy = Automatic
+
+	column CURRENT_DATE
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 42c217c3-c6ee-49d8-815d-08b4bbc499ea
+		summarizeBy: none
+		sourceColumn: CURRENT_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column IS_GES_SYSTEM_CURRENT_EFFECTIVE
+		dataType: string
+		lineageTag: 7e664157-9c21-4a84-abdf-4a0634d0ea63
+		summarizeBy: none
+		sourceColumn: IS_GES_SYSTEM_CURRENT_EFFECTIVE
+
+		annotation SummarizationSetBy = Automatic
+
+	column HUMIDITY_EFFECTIVE
+		dataType: double
+		lineageTag: dee53ed7-8958-436a-9922-9582b6767f97
+		summarizeBy: sum
+		sourceColumn: HUMIDITY_EFFECTIVE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IS_BRIPSYSTEM_1ST_2ND_STAGE_EFFECTIVE
+		dataType: int64
+		formatString: 0
+		lineageTag: 80a308f3-d754-407c-9b29-e9b8e4e9b56e
+		summarizeBy: sum
+		sourceColumn: IS_BRIPSYSTEM_1ST_2ND_STAGE_EFFECTIVE
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_BRIPSYSTEM_1ST_STAGE_ONLY_EFFECTIVE
+		dataType: int64
+		formatString: 0
+		lineageTag: 3bb6982a-a127-486b-88ff-16719f1d743c
+		summarizeBy: sum
+		sourceColumn: IS_BRIPSYSTEM_1ST_STAGE_ONLY_EFFECTIVE
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_BRIPSYSTEM_REINJECTION_OFFLINE_EFFECTIVE
+		dataType: int64
+		formatString: 0
+		lineageTag: 72045876-48e5-4cf3-b702-8766ca095cca
+		summarizeBy: sum
+		sourceColumn: IS_BRIPSYSTEM_REINJECTION_OFFLINE_EFFECTIVE
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Forecast = m
+		mode: import
+		queryGroup: Forecast
+		source = ```
+				let
+				    Source = Value.NativeQuery(DatabricksMultiCloud.Catalogs(DB_HOST, DB_PATH, [Catalog="dev_generation", Database=null, EnableAutomaticProxyDiscovery=null]){[Name="dev_generation",Kind="Database"]}[Data], "SELECT * FROM dev_generation.geothermal.reporting_geo_station_model_forecast_7days_latest_v 
+				    LIMIT " & DB_LIMITS_ROWS
+				    
+				    , null, [EnableFolding=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"7_DAYS_TIME", type time}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Changed Type",0,null,Replacer.ReplaceValue,{"future_megawattloss"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value",0,null,Replacer.ReplaceValue,{"megawattloss"}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Replaced Value1",{"row_num"})
+				in
+				    #"Removed Columns"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

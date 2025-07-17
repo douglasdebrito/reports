@@ -1,0 +1,43 @@
+table 'Pages x Tables'
+	lineageTag: 0390b242-bc6e-4061-ab50-b2ab0b34789d
+
+	column Page
+		dataType: string
+		lineageTag: a41adeac-b0df-4d4f-b257-f6b73ca89948
+		summarizeBy: none
+		sourceColumn: Page
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Main Source'
+		dataType: string
+		lineageTag: a8c04d1f-08c5-4848-bebe-ae9aab9fcd34
+		summarizeBy: none
+		sourceColumn: Main Source
+
+		annotation SummarizationSetBy = Automatic
+
+	column Order
+		dataType: int64
+		formatString: 0
+		lineageTag: 2e5d464f-471f-42d4-aa73-65d31f167604
+		summarizeBy: sum
+		sourceColumn: Order
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Pages x Tables' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("nZPda8IwFMX/ldBnH7Tq3B7FTfcw5sAhAyeXaGMTSJOS3Fn63+/2Q1zNPpgPLbT3nF9PzyWbTTSIetEy9+yee7mz3CWseuNEbh0qk0IqLMSQKQM7ujT3CON+/Xx8N11ZWkgohUfhEl4CWrpfSs4kfkwbWjwCCcdo29tEcZAlvjbLsN/VDWL6SqFQgs9DtReYW2UQbI4qU144kFwfQNoPp0twvGgTDinP3DqxJ2YQzSNHZQ1kNhEaDq0MJtSDpxRI1bSYEXkflUmqOXt+XUwDlmynLSzhinJ0GONLBtVGoitIN+SpAT/+2d+MCXkWDyt2ShQgUuG/xzT+WzKsBLLlaQFhu7/vqMHcfS1lZg06q68jDfrkmxquS1R7rtkTL4VjayWKgIeOG0/rzpr1V6wuqjpRc20LNuNa7VwtY1MtHPoAdiAd7M864LXuhKoOxBtb0zxpMDF7kdwLVvH/A9t+Ag==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Order = _t, Page = _t, #"Main Source Tables" = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Page", type text}, {"Main Source Tables", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"Main Source Tables", "Main Source"}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Renamed Columns",{{"Order", Int64.Type}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
